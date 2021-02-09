@@ -1,0 +1,5 @@
+.vim/plugged
+/.netrwhist
+.ssh
+.DS_Store
+.vscode

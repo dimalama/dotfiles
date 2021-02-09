@@ -1,0 +1,25 @@
+cask_args appdir: '/Applications'
+
+tap 'caskroom/cask'
+
+brew 'grep'
+brew 'openssh'
+brew 'screen'
+brew 'zsh'
+brew 'zplug'
+brew 'git'
+brew 'git-lfs'
+brew 'yarn'
+brew 'nvm'
+brew 'docker'
+brew 'vim', args: ['with-override-system-vi']
+brew 'the_silver_searcher'
+
+cask 'sequel-pro'
+cask 'java'
+cask 'iterm2'
+cask 'visual-studio-code'
+cask 'google-chrome'
+cask 'firefox'
+cask 'spectacle'
+cask 'franz'
