@@ -28,4 +28,13 @@ export PATH="$HOME/.fastlane/bin:$PATH"
 #load
 zplug load
 
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+DEFAULT_USER=$(whoami)
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE="awesome-patched"
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme

@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
+brew tap sambadevi/powerlevel9k
 
 brew 'grep'
 brew 'openssh'
@@ -14,6 +15,7 @@ brew 'nvm'
 brew 'docker'
 brew 'vim', args: ['with-override-system-vi']
 brew 'the_silver_searcher'
+brew 'powerlevel9k'
 
 cask 'sequel-pro'
 cask 'java'
