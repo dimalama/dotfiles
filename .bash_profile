@@ -11,3 +11,4 @@ source $(brew --prefix nvm)/nvm.sh
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+complete -C /usr/local/bin/terraform terraform

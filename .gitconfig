@@ -22,6 +22,9 @@
 	# Commit all changes
 	ca = !git add -A && git commit -av
 
+  # Checkout
+  ch = "!f() { git checkout \"$1\"; }; f"
+
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; git pull origin \"$1\"; }; f"
 	
@@ -100,7 +103,7 @@
 [core]
 
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -158,6 +161,7 @@
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = false
+	template = ~/.stCommitMsg
 
 [diff]
 
@@ -197,8 +201,8 @@
 	followTags = true
 
 [pull]
-
-  rebase = true
+  # turn off rebase on pull for compass project
+  rebase = false
 
 # URL shorthands
 
@@ -226,5 +230,18 @@
 	program = gpg
 
 [user]
-# name = Your name goes here
-# email = Your email goes here
+	name = 
+	email = 
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[init]
+	defaultBranch = main

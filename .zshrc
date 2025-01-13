@@ -35,6 +35,12 @@ DEFAULT_USER=$(whoami)
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE="awesome-patched"
 
+source $(brew --prefix)/etc/bash_completion.d/az
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+
+# Added by Windsurf
+export PATH="/Users/$DEFAULT_USER/.codeium/windsurf/bin:$PATH"
