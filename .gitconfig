@@ -27,16 +27,16 @@
 
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; git pull origin \"$1\"; }; f"
-	
+
 	# Create named stash
 	st = "!f() { git stash push -m \"$1\"; }; f"
-	
+
 	# Show stash list
 	stl = !"git stash list"
-	
+
 	# Apply stash at index
 	sta = "!f() { git stash apply stash@{\"$1\"}; }; f"
-	
+
 	# Remove stash at index
 	str = "!f() { git stash drop stash@{\"$1\"}; }; f"
 
@@ -167,11 +167,16 @@
 
 	# Detect copies as well as renames
 	renames = copies
+	tool = windsurf
 
 [diff "bin"]
 
 	# Use `hexdump` to diff binary files
 	textconv = hexdump -v -C
+
+[difftool "windsurf"]
+	cmd = windsurf diff \"$LOCAL\" \"$REMOTE\"
+
 [fetch]
 	prune = true
 
@@ -184,6 +189,11 @@
 
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	tool = windsurf
+
+[mergetool "windsurf"]
+	cmd = windsurf merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	trustExitCode = true
 
 [pager]
 	# insanely beautiful diffs ==> npm install -g diff-so-fancy
@@ -225,23 +235,18 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
-  
+
 [gpg]
 	program = gpg
 
 [user]
-	name = 
-	email = 
+	name = Dima Lukianenko
+	email = dima.lukianenko@dimalama.com
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+
 [init]
 	defaultBranch = main
