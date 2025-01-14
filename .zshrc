@@ -45,4 +45,4 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 export PATH="/Users/$DEFAULT_USER/.codeium/windsurf/bin:$PATH"
 
 # Source powerlevel10k
-source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
+source $(brew --prefix powerlevel10k)/powerlevel10k.zsh-theme

@@ -1,7 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
-brew tap sambadevi/powerlevel9k
+tap 'romkatv/powerlevel10k'
 
 brew 'grep'
 brew 'openssh'
@@ -15,7 +15,7 @@ brew 'nvm'
 brew 'docker'
 brew 'vim', args: ['with-override-system-vi']
 brew 'the_silver_searcher'
-brew 'powerlevel9k'
+brew 'powerlevel10k'
 brew 'gh'
 brew 'curl'
 brew 'font-fira-code-nerd-font'
@@ -32,4 +32,3 @@ cask 'spectacle'
 cask 'slack'
 cask 'spotify'
 cask 'microsoft-edge'
-
