@@ -22,7 +22,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
-# iOS Dev: Fastlane 
+# iOS Dev: Fastlane
 export PATH="$HOME/.fastlane/bin:$PATH"
 
 #load
@@ -32,8 +32,8 @@ zplug load
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 DEFAULT_USER=$(whoami)
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE="awesome-patched"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+POWERLEVEL9K_MODE="nerdfont-complete"
 
 source $(brew --prefix)/etc/bash_completion.d/az
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -44,3 +44,6 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 
 # Added by Windsurf
 export PATH="/Users/$DEFAULT_USER/.codeium/windsurf/bin:$PATH"
+
+# Source powerlevel10k
+source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
