@@ -38,7 +38,6 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 source $(brew --prefix)/etc/bash_completion.d/az
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
