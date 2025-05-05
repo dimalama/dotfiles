@@ -1,0 +1,257 @@
+{
+  "windsurf.autocompleteSpeed": "fast",
+  "editor.accessibilitySupport": "off",
+  "files.autoSave": "onFocusChange",
+  "vim.smartRelativeLine": true,
+  "vim.useSystemClipboard": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.easymotion": true,
+  "files.autoSaveDelay": 100000,
+  "editor.renderWhitespace": "all",
+  "editor.detectIndentation": false,
+  "vim.enableNeovim": false,
+  "vim.incsearch": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.history": 1000,
+  "vim.showcmd": true,
+  "vim.autoindent": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    // "<C-a>": false,
+    "<C-k>": false
+  },
+  // Insert snippets when their prefix matches. Works best when 'quickSuggestions' aren't enabled.
+  "editor.tabCompletion": "on",
+  "workbench.sideBar.location": "right",
+  "editor.renderControlCharacters": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.minimap.enabled": true,
+  "editor.minimap.showSlider": "always",
+  "workbench.editor.closeOnFileDelete": false,
+  // Configure glob patterns for excluding files and folders.
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "cSpell.userWords": [
+    "Autofac",
+    "CSRF",
+    "Dmitry",
+    "Elems",
+    "HSTS",
+    "Injectable",
+    "Instrumenter",
+    "Lukianenko",
+    "Mediat",
+    "Multiselect",
+    "Spottr",
+    "Truthy",
+    "Validators",
+    "XCSRF",
+    "Xsrf",
+    "aspnet",
+    "asynciterable",
+    "autoprefixer",
+    "blockless",
+    "callout",
+    "codelyzer",
+    "combinator",
+    "dedupe",
+    "devkit",
+    "esnext",
+    "fnames",
+    "gitignore",
+    "gmail",
+    "inferrable",
+    "inmemory",
+    "jasminewd",
+    "maxlength",
+    "minlength",
+    "ngfactory",
+    "ngtools",
+    "nguniversal",
+    "parens",
+    "posttest",
+    "prebuild",
+    "prerendering",
+    "quotemark",
+    "scrollbar",
+    "sourcemap",
+    "stylelint",
+    "stylelintrc",
+    "textfield",
+    "timeslot",
+    "timeslots",
+    "tsickle",
+    "tslib",
+    "typedoc",
+    "uglifyjs",
+    "unspaced",
+    "upsert",
+    "webapp",
+    "webapps",
+    "woff",
+    "yellowspot"
+  ],
+  "gitlens.keymap": "none",
+  "editor.lineNumbers": "relative",
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "explorer.confirmDelete": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "breadcrumbs.enabled": true,
+  "editor.fontSize": 14,
+  "git.autofetch": true,
+  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.suggestSelection": "first",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.openFoldersInNewWindow": "off",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-vscode.csharp"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.semanticHighlighting.enabled": true,
+  "prettier.printWidth": 180,
+  "editor.rulers": [{ "column": 180, "color": "#0bf72a" }],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "debug.allowBreakpointsEverywhere": true,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.enablePreview": true,
+  "editor.rename.enablePreview": false,
+  "workbench.editor.decorations.colors": true,
+  "workbench.editor.decorations.badges": true,
+  "notebook.cellToolbarLocation": {
+    "default": "right"
+  },
+  "notebook.outline.showCodeCells": true,
+  "notebook.diff.enablePreview": false,
+  "prettier.withNodeModules": true,
+  "prettier.prettierPath": "./node_modules/prettier",
+  "prettier.configPath": "./.prettierrc.json",
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.options": {
+    "extensions": [".ts", ".scss"]
+  },
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#46e3fd",
+    "titleBar.inactiveBackground": "#46e3fd99",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveForeground": "#15202b99",
+    "statusBar.background": "#46e3fd",
+    "statusBarItem.hoverBackground": "#14dbfc",
+    "statusBar.foreground": "#15202b",
+    "tab.activeBorder": "#78ebfe",
+    "activityBar.activeBackground": "#333",
+    "activityBar.activeBorder": "#fff",
+    "activityBar.background": "#333",
+    "activityBar.foreground": "#fff",
+    "activityBar.inactiveForeground": "#9d9d9d",
+    "activityBarBadge.background": "#006bc2",
+    "activityBarBadge.foreground": "#fff",
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f"
+  },
+  "editor.wordWrap": "off",
+  "diffEditor.wordWrap": "off",
+  "[markdown]": {
+    "editor.wordWrap": "off",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "editor.cursorStyle": "line",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.find.autoFindInSelection": "multiline",
+  "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "bash",
+      "args": ["-l"],
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh",
+      "args": ["-l"]
+    },
+    "fish": {
+      "path": "fish",
+      "args": ["-l"]
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    },
+    "/bin/zsh (migrated)": {
+      "path": "/bin/zsh",
+      "args": ["-l"]
+    },
+    "iTerm.app": {
+      "path": "/usr/local/bin/zsh",
+      "args": ["-l"]
+    }
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.suggest.preview": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.guides.indentation": false,
+  "editor.guides.highlightActiveIndentation": false,
+  "redhat.telemetry.enabled": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "git.timeline.showUncommitted": true,
+  "timeline.pageOnScroll": true,
+  "gitlens.autolinks": [],
+  "terminal.integrated.fontFamily": "'SourceCodePro+Powerline+Awesome Regular'",
+  "terminal.explorerKind": "external",
+  "terminal.integrated.automationProfile.osx": {},
+  "terminal.external.osxExec": "iTerm.app",
+  "githubPullRequests.pullBranch": "never",
+  "errorLens.lintFilePaths": {
+    "eslint": ["**/*.eslintrc.{js,cjs,yaml,yml,json}", "**/*package.json"],
+    "Stylelint": ["**/*.stylelintrc", "**/*.stylelintrc.{cjs,js,json,yaml,yml}", "**/*stylelint.config.{cjs,js}", "**/*package.json"]
+  },
+  "diffEditor.experimental.showMoves": true,
+  "editor.tabSize": 2,
+  "scm.workingSets.enabled": true,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "workbench.colorTheme": "Serendipity Sunset V1",
+  "security.workspace.trust.untrustedFiles": "open",
+  "application.shellEnvironmentResolutionTimeout": 30
+}

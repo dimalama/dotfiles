@@ -5,6 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export ZPLUG_HOME=/usr/local/opt/zplug
 
 # zplug init
@@ -30,7 +37,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
-# iOS Dev: Fastlane 
+# iOS Dev: Fastlane
 export PATH="$HOME/.fastlane/bin:$PATH"
 
 #load
@@ -45,8 +52,20 @@ source $(brew --prefix)/etc/bash_completion.d/az
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
+# Azure CLI completion
+[[ -f /usr/local/etc/bash_completion.d/az ]] && source /usr/local/etc/bash_completion.d/az
+
+# Source zsh-autosuggestions
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Source powerlevel10k
+source /usr/local/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
+
 # Added by Windsurf
 export PATH="/Users/$DEFAULT_USER/.codeium/windsurf/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
