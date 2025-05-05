@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -e
+
+# Add Homebrew to PATH
+export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
 
 # Install command-line tools using Homebrew.
 
@@ -29,4 +33,4 @@ brew bundle
 
 # Remove outdated versions from the cellar.
 brew cleanup
-brew bundle cleanup
+brew bundle cleanup --force

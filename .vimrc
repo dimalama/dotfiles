@@ -1,6 +1,5 @@
 set background=dark
 colorscheme dracula
-let g:solarized_termtrans=1
 
 " Make Vim more useful
 set nocompatible
@@ -134,20 +133,8 @@ augroup END
 " }}}
 
 " Prettier
-let g:prettier#autoformat = 1
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+" Using coc-prettier now if installed via :CocInstall coc-prettier
+" let g:prettier#autoformat = 1
 
 " Vim Javascript 
 let g:javascript_plugin_jsdoc = 1
@@ -162,12 +149,82 @@ augroup END
 " FZF
 "set rtp+=~/.fzf
 
+" ===== Coc.nvim Configuration =====
+
+" Use tab for trigger completion with characters completion and navigate.
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by setting `suggest.noselect` to true.
+" Invalidate completion function after inactivity to avoid unexpected completion triggering.
+" NOTE: If you comment these out, you'll need to configure completion triggering yourself.
+" See: https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#key-mappings-for-completion
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#next(1) : CheckBackspace() ? "\<Tab>" : coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to handle the confirm.
+" NOTE: Requires `suggest.noselect: false` (default) in :CocConfig
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+function! CheckBackspace()
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use `[g` and `]g` to navigate diagnostics
+nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
+nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation
+nnoremap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> gy <Plug>(coc-type-definition)
+nnoremap <silent> gi <Plug>(coc-implementation)
+nnoremap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+augroup coc_event
+  autocmd!
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup end
+
+" Symbol renaming
+nnoremap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Setup formatexpr specified filetype(s).
+augroup Format
+  autocmd!
+  autocmd FileType typescript,javascript,json,css,scss,html,python setl formatexpr=CocAction('format')
+augroup END
+
+" Applying code actions.
+nmap <leader>a  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf <Plug>(coc-fix-current)
+
+" ===== End Coc.nvim Configuration =====
+
+
 " `gf` opens file under cursor in a new vertical split
 nnoremap gf :vertical wincmd f<CR>
 
 " Remap
 inoremap jk <ESC>
-
 
 " ========================
 " Plug-Ins
@@ -183,7 +240,8 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'altercation/vim-colors-solarized'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -197,10 +255,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ternjs/tern_for_vim'
 Plug 'tpope/vim-markdown',     { 'for': 'markdown' }
-Plug 'vim-syntastic/syntastic'
-Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'wincent/command-t'
+Plug 'vim-scripts/paredit.vim',  { 'for': 'clojure' }
+Plug 'SirVer/ultisnips'
 
 call plug#end()
