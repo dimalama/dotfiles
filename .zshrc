@@ -5,13 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 export ZPLUG_HOME=/usr/local/opt/zplug
 
 # zplug init
@@ -67,5 +60,18 @@ export PATH="/Users/$DEFAULT_USER/.codeium/windsurf/bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Fix for git branch display - added by fix-git-branch-display.sh
+# This sets a simple text-based format for git branch display
+POWERLEVEL9K_VCS_BRANCH_ICON='git:'
+POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION=
+# Force reload powerlevel10k
+source $(brew --prefix)/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
+
+
+# Fix for git branch display - added by fix-git-branch-display.sh
+# This sets a simple text-based format for git branch display
+POWERLEVEL9K_VCS_BRANCH_ICON='git:'
+POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION=
+# Force reload powerlevel10k
+source $(brew --prefix)/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
+
