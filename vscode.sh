@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
-# Get the directory of the install.sh script (assuming vscode.sh is called from it)
-# If vscode.sh could be run standalone, it needs its own directory detection.
-# Assuming it's called by install.sh which already determined SCRIPT_DIR
+# Get the directory of the script if SCRIPT_DIR is not already set
 if [ -z "$SCRIPT_DIR" ]; then
-  echo "Error: SCRIPT_DIR not set. Run this script via install.sh"
-  exit 1
+  SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+  echo "Setting SCRIPT_DIR to: $SCRIPT_DIR"
 fi
 
 echo "Configuring VS Code settings..."
