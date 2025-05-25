@@ -60,18 +60,6 @@ export PATH="/Users/$DEFAULT_USER/.codeium/windsurf/bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Fix for git branch display - added by fix-git-branch-display.sh
-# This sets a simple text-based format for git branch display
-POWERLEVEL9K_VCS_BRANCH_ICON='git:'
-POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION=
-# Force reload powerlevel10k
-source $(brew --prefix)/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 
 
-# Fix for git branch display - added by fix-git-branch-display.sh
-# This sets a simple text-based format for git branch display
-POWERLEVEL9K_VCS_BRANCH_ICON='git:'
-POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION=
-# Force reload powerlevel10k
-source $(brew --prefix)/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 
