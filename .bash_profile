@@ -8,3 +8,5 @@ export CLICOLOR_FORCE=1
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+. "$HOME/.local/bin/env"

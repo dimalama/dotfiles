@@ -61,5 +61,4 @@ export PATH="/Users/$DEFAULT_USER/.codeium/windsurf/bin:$PATH"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-
-
+. "$HOME/.local/bin/env"
