@@ -3,14 +3,27 @@
   "editor.accessibilitySupport": "off",
   "files.autoSave": "onFocusChange",
   "vim.smartRelativeLine": true,
-  "vim.useSystemClipboard": true,
   "vim.camelCaseMotion.enable": true,
-  "vim.easymotion": true,
   "files.autoSaveDelay": 100000,
   "editor.renderWhitespace": "all",
   "editor.detectIndentation": false,
+
+  // Automatically trim trailing whitespace
+  "files.trimTrailingWhitespace": true,
+  // Ensure final newline at end of file
+  "files.insertFinalNewline": true,
+
+  // Format file on save
+  "editor.formatOnSave": false,
+  // Run ESLint auto-fix on save (requires ESLint extension)
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+  },
+
+  "vim.easymotion": true,
   "vim.enableNeovim": false,
   "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
   "vim.history": 1000,
@@ -125,7 +138,8 @@
   },
   "window.openFoldersInNewWindow": "off",
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    // Use Prettier for JSON consistency
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[csharp]": {
     "editor.defaultFormatter": "ms-vscode.csharp"
@@ -248,6 +262,7 @@
     "Stylelint": ["**/*.stylelintrc", "**/*.stylelintrc.{cjs,js,json,yaml,yml}", "**/*stylelint.config.{cjs,js}", "**/*package.json"]
   },
   "diffEditor.experimental.showMoves": true,
+  "snyk.yesWelcomeNotification": false,
   "editor.tabSize": 2,
   "scm.workingSets.enabled": true,
   "github.copilot.editor.enableAutoCompletions": true,
