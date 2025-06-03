@@ -3,25 +3,31 @@ set -e
 
 echo "Fixing git branch display in terminal..."
 
-# Create a backup of the current .p10k.zsh file
-if [ -f ~/.p10k.zsh ]; then
+# Create a backup of the current .p10k.zsh file (only if not already backed up)
+if [ -f ~/.p10k.zsh ] && [ ! -f ~/.p10k.zsh.backup ]; then
   cp ~/.p10k.zsh ~/.p10k.zsh.backup
   echo "Created backup of existing .p10k.zsh at ~/.p10k.zsh.backup"
+elif [ -f ~/.p10k.zsh.backup ]; then
+  echo "Backup of .p10k.zsh already exists at ~/.p10k.zsh.backup"
 fi
 
-# Add text-based fallback for git branch display to .zshrc
-cat << 'EOF' >> ~/.zshrc
+# Check if fix has already been applied
+if grep -q "POWERLEVEL9K_VCS_BRANCH_ICON='git:'" ~/.zshrc; then
+  echo "Git branch display settings already exist in .zshrc, skipping..."
+else
+  # Add text-based fallback for git branch display to .zshrc
+  cat << 'EOF' >> ~/.zshrc
 
 # Fix for git branch display - added by fix-git-branch-display.sh
 # This sets a simple text-based format for git branch display
 POWERLEVEL9K_VCS_BRANCH_ICON='git:'
 POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION=
-# Force reload powerlevel10k
+# Force reload powerlevel10k using architecture-aware path
 source $(brew --prefix)/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 
 EOF
-
-echo "Added text-based git branch display to .zshrc"
+  echo "Added text-based git branch display to .zshrc"
+fi
 
 # Provide instructions for manually running p10k configure
 echo "

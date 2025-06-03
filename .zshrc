@@ -5,7 +5,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export ZPLUG_HOME=/usr/local/opt/zplug
+# Set architecture-specific brew path
+if [[ $(uname -m) == 'arm64' ]]; then
+  export BREW_PREFIX="/opt/homebrew"
+else
+  export BREW_PREFIX="/usr/local"
+fi
+
+export ZPLUG_HOME="$BREW_PREFIX/opt/zplug"
 
 # zplug init
 source $ZPLUG_HOME/init.zsh
@@ -13,10 +20,11 @@ source $ZPLUG_HOME/init.zsh
 #editor
 export EDITOR=vim
 
+# NVM setup
 export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
+[ -s "$BREW_PREFIX/opt/nvm/nvm.sh" ] && . "$BREW_PREFIX/opt/nvm/nvm.sh"
 
-#zplug
+#zplug plugins (only define here, loaded later)
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "lukechilds/zsh-nvm"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -33,26 +41,21 @@ fi
 # iOS Dev: Fastlane
 export PATH="$HOME/.fastlane/bin:$PATH"
 
-#load
+# Python configuration - ensure Homebrew's Python is used
+export PATH="$BREW_PREFIX/opt/python/libexec/bin:$PATH"
+
+# Load zplug plugins
 zplug load
 
-
+# FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 DEFAULT_USER=$(whoami)
 
-source $(brew --prefix)/etc/bash_completion.d/az
+# Azure CLI and Terraform completion (only load once)
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
-
-# Azure CLI completion
-[[ -f /usr/local/etc/bash_completion.d/az ]] && source /usr/local/etc/bash_completion.d/az
-
-# Source zsh-autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Source powerlevel10k
-source /usr/local/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
+[[ -f "$BREW_PREFIX/etc/bash_completion.d/az" ]] && source "$BREW_PREFIX/etc/bash_completion.d/az"
+complete -o nospace -C "$BREW_PREFIX/bin/terraform" terraform
 
 # Added by Windsurf
 export PATH="/Users/$DEFAULT_USER/.codeium/windsurf/bin:$PATH"
@@ -60,5 +63,7 @@ export PATH="/Users/$DEFAULT_USER/.codeium/windsurf/bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
-. "$HOME/.local/bin/env"
+# Source local environment if it exists
+[[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
+# Add default Python virtual environment
+alias activate='source ~/.venv/bin/activate'

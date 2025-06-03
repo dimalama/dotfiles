@@ -25,6 +25,8 @@ brew 'terraform'
 brew 'tflint'
 brew 'terraform-docs'
 brew 'checkov'
+brew 'python'
+brew 'uv'
 
 cask 'sequel-pro'
 cask 'iterm2'

@@ -19,5 +19,4 @@ VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
 mkdir -p "$VSCODE_USER_DIR" # Ensure directory exists
 ln -sf "$SCRIPT_DIR/vscode/settings.json" "$VSCODE_USER_DIR/settings.json"
 
-echo "VS Code configuration complete.source $(brew --prefix)/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
-p10k configure"
+echo "VS Code configuration complete."
