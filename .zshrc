@@ -42,7 +42,6 @@ fi
 export PATH="$HOME/.fastlane/bin:$PATH"
 
 # Python configuration - ensure Homebrew's Python is used
-export PATH="$BREW_PREFIX/opt/python/libexec/bin:$PATH"
 
 # Load zplug plugins
 zplug load
@@ -67,3 +66,9 @@ export PATH="/Users/$DEFAULT_USER/.codeium/windsurf/bin:$PATH"
 [[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
 # Add default Python virtual environment
 alias activate='source ~/.venv/bin/activate'
+
+# Python configuration
+# Add user bin directory to PATH
+export PATH="$HOME/.local/bin:$PATH"
+# Ensure Homebrew's Python is used
+export PATH="$BREW_PREFIX/opt/python@3.13/libexec/bin:$PATH"
