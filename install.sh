@@ -14,7 +14,7 @@ fi
 # Function to ask for confirmation
 ask_confirmation() {
     read -p "$1 (yes/no): " choice
-    case "$choice" in 
+    case "$choice" in
         y|Y|yes|Yes|YES ) return 0;;
         n|N|no|No|NO ) return 1;;
         * ) echo "Please answer yes or no."; ask_confirmation "$1";;
@@ -25,14 +25,14 @@ ask_confirmation() {
 create_symlink() {
     local source="$1"
     local target="$2"
-    
+
     # Check if target exists and is not a symlink
     if [ -e "$target" ] && [ ! -L "$target" ]; then
         local backup="${target}.backup.$(date +%Y%m%d%H%M%S)"
         echo "Backing up existing $target to $backup"
         mv "$target" "$backup"
     fi
-    
+
     echo "Creating symlink: $target -> $source"
     ln -sf "$source" "$target"
 }
@@ -61,13 +61,15 @@ if ask_confirmation "Do you want to create symlinks?"; then
     # Config directories
     mkdir -p "$HOME/.config/gh"
     create_symlink "$SCRIPT_DIR/gh/config.yml" "$HOME/.config/gh/config.yml"
-    
+
     mkdir -p "$HOME/.config/gh-dash"
     create_symlink "$SCRIPT_DIR/gh-dash/config.yml" "$HOME/.config/gh-dash/config.yml"
-    
+
     mkdir -p "$HOME/.codeium/windsurf/memories"
     create_symlink "$SCRIPT_DIR/windsurf/global_rules.md" "$HOME/.codeium/windsurf/memories/global_rules.md"
-    
+
+    mkdir -p "$HOME/.claude"
+    create_symlink "$SCRIPT_DIR/.claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
     # Note: .ssh directory is commented out for security reasons
     # create_symlink "$SCRIPT_DIR/.ssh" "$HOME/.ssh"
 else

@@ -72,3 +72,5 @@ alias activate='source ~/.venv/bin/activate'
 export PATH="$HOME/.local/bin:$PATH"
 # Ensure Homebrew's Python is used
 export PATH="$BREW_PREFIX/opt/python@3.13/libexec/bin:$PATH"
+# Add default Python virtual environment
+alias activate='source ~/.venv/bin/activate'
