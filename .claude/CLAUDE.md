@@ -14,4 +14,5 @@
 13. Look up documentation for APIs on the web instead of trying to remember things from scratch.
 14. Write the program, reflect on its quality, simplicity, correctness, and ease of modification, and then go back and write a second version.
 15. When writting code in python, use uv as pip alternative and .venv as virtual environment.
-
+16. When you work on a project, use git to version control your code.
+17. When you start, create CLAUDE.md file in the project root and keep it updated with your knowledge about the project, e.g. coding guidelines, and any other relevant information.
