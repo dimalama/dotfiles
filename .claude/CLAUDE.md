@@ -16,3 +16,5 @@
 15. When writting code in python, use uv as pip alternative and .venv as virtual environment.
 16. When you work on a project, use git to version control your code.
 17. When you start, create CLAUDE.md file in the project root and keep it updated with your knowledge about the project, e.g. coding guidelines, and any other relevant information.
+18. Follow the DRY and SOLID software engineering principles where appropriate.
+19. Use terraform for infrastructure as code.
