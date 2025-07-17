@@ -76,6 +76,14 @@ else
     echo "Skipping symlinks creation."
 fi
 
+# PostgreSQL setup
+if ask_confirmation "Do you want to run PostgreSQL setup?"; then
+    echo "Running PostgreSQL setup..."
+    "$SCRIPT_DIR/postgres.sh"
+else
+    echo "Skipping PostgreSQL setup."
+fi
+
 # VS Code setup
 if ask_confirmation "Do you want to run VS Code setup?"; then
     echo "Running VS Code setup..."

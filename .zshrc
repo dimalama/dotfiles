@@ -74,3 +74,11 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$BREW_PREFIX/opt/python@3.13/libexec/bin:$PATH"
 # Add default Python virtual environment
 alias activate='source ~/.venv/bin/activate'
+
+# PostgreSQL
+export PGDATA="$BREW_PREFIX/var/postgres"
+alias pgstart='brew services start postgresql'
+alias pgstop='brew services stop postgresql'
+alias pgrestart='brew services restart postgresql'
+alias pglocal='psql -d postgres'
+

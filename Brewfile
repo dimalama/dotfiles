@@ -1,5 +1,12 @@
 cask_args appdir: '/Applications'
 
+# DB
+brew "postgresql"
+brew "postgis"
+brew "pgvector"
+brew "pgcli"
+
+
 tap 'homebrew/cask-fonts'
 
 brew 'grep'
