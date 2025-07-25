@@ -18,3 +18,10 @@
 17. When you start, create CLAUDE.md file in the project root and keep it updated with your knowledge about the project, e.g. coding guidelines, and any other relevant information.
 18. Follow the DRY and SOLID software engineering principles where appropriate.
 19. Use terraform for infrastructure as code.
+20. When working on a task follow 5 reasoning patterns:
+    - **Monotonicity (and Immutability)** Structures or processes that only move forward (or never regress) are easier to reason about. Example: checkpointed scripts or LSM‑tree writes only add state, making correctness easier to prove. Immutable objects similarly limit complexity because they cannot change once constructed
+    - **Pre‑conditions and Post‑conditions** Be explicit about what your function expects before running (inputs/state) and what it guarantees afterward. These can inspire tests and assertions, forcing early crashes on failure and making behavior predictable
+    - **Invariants** Conditions that must always hold true throughout execution. Prove they’re preserved step-by-step, even across forks in logic.Examples include double-entry accounting balances or data consistency in pipelines and lifecycle hooks
+    - **Isolation (Controlled Blast Radius)** When modifying code, reason about what parts shouldn’t change. Design boundaries or firewalls (like query planner → executor interfaces) so that modifications stay local and limited in impact.
+    - **Induction (for Recursive Logic)** Use induction-style reasoning to prove correctness over recursive structures (trees, lists) or recursive functions. Prove base cases and inductive steps to extend confidence to larger instances.
+21. Aim for “proof-affinity”—how easy it is for you to reason about your code. A codebase with high proof-affinity is easier to understand, maintain, extend and test.
