@@ -67,13 +67,19 @@ export PATH="/Users/$DEFAULT_USER/.codeium/windsurf/bin:$PATH"
 # Add default Python virtual environment
 alias activate='source ~/.venv/bin/activate'
 
-# Python configuration
+# Pyenv configuration
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+if command -v pyenv-virtualenv-init 1>/dev/null 2>&1; then
+    eval "$(pyenv virtualenv-init -)"
+fi
+
 # Add user bin directory to PATH
 export PATH="$HOME/.local/bin:$PATH"
-# Ensure Homebrew's Python is used
-export PATH="$BREW_PREFIX/opt/python@3.13/libexec/bin:$PATH"
-# Add default Python virtual environment
-alias activate='source ~/.venv/bin/activate'
 
 # PostgreSQL
 export PGDATA="$BREW_PREFIX/var/postgres"

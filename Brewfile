@@ -33,6 +33,8 @@ brew 'tflint'
 brew 'terraform-docs'
 brew 'checkov'
 brew 'python'
+brew 'pyenv'
+brew 'pyenv-virtualenv'
 brew 'uv'
 brew 'just'
 
