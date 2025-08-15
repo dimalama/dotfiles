@@ -22,6 +22,13 @@ This is a dot files project. The purpose of this project to maintain configurati
 ./setup-python.sh
 ./setup-python.sh --recreate-venv  # Recreate venv with latest Python
 
+# Set up dev container for projects
+./setup-devcontainer.sh             # Interactive mode
+./setup-devcontainer.sh nodejs .    # Quick setup
+
+# Install Claude Code CLI
+./setup-claude-code.sh
+
 # Fix terminal display issues
 ./fix-git-branch-display.sh
 ./fix-terminal-icons.sh
@@ -37,9 +44,11 @@ This is a dot files project. The purpose of this project to maintain configurati
 ### Key Configurations
 - **Shell**: zsh with powerlevel10k theme, zplug plugin manager, and modern CLI tool aliases
 - **Editor**: Vim configuration with extensive customization
-- **Git**: Custom aliases for common workflows (l, lg, s, d, ca, go)
-- **VS Code**: Vim mode enabled with smart relative line numbers and auto-formatting
-- **Python**: Uses uv as pip alternative with default .venv virtual environment
+- **Git**: Custom aliases for common workflows, modern settings (zdiff3, autosquash, autoStash)
+- **Editors**: VS Code with vim mode, Windsurf AI-powered editor with smart relative line numbers and auto-formatting
+- **Python**: Uses uv as pip alternative with pyenv version management and default .venv virtual environment
+- **Node.js**: Runtime with nvm version management, pnpm (preferred) and npm package managers with helpful aliases
+- **Network Tools**: dig, nmap, netcat, telnet, whois, wget, and other essential network utilities
 - **Modern CLI Tools**: bat (cat), eza (ls), fd (find), ripgrep (grep), zoxide (cd), fzf, htop, tmux
 
 ### Directory Structure
@@ -71,6 +80,10 @@ dotfiles/
 - **terraform**: Infrastructure as code with tflint and terraform-docs
 - **checkov**: Security scanning for infrastructure
 - **act**: Local GitHub Actions testing
+- **Node.js**: Runtime with nvm (Node Version Manager) and pnpm/npm package managers
+- **Network tools**: dig, nmap, netcat, telnet, whois, wget, mtr, iperf3, tcpdump, wireshark
+- **AI Tools**: Claude Code CLI for AI-assisted coding, GitHub Copilot, Codeium
+- **Dev Containers**: Pre-configured templates for Node.js, Python, and full-stack development
 - **Modern CLI alternatives**: bat, fd, ripgrep, eza, zoxide, fzf, htop, tree, jq, delta, tmux, diff-so-fancy, tldr, watch
 
 ## Symlink Targets

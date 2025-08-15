@@ -93,4 +93,12 @@ else
     echo "Skipping VS Code setup."
 fi
 
+# Claude Code CLI setup
+if ask_confirmation "Do you want to install Claude Code CLI?"; then
+    echo "Installing Claude Code CLI..."
+    "$SCRIPT_DIR/setup-claude-code.sh"
+else
+    echo "Skipping Claude Code CLI setup."
+fi
+
 echo '====== Installation complete ======'

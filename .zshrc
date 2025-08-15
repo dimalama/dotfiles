@@ -23,6 +23,7 @@ export EDITOR=vim
 # NVM setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$BREW_PREFIX/opt/nvm/nvm.sh" ] && . "$BREW_PREFIX/opt/nvm/nvm.sh"
+[ -s "$BREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && . "$BREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
 
 #zplug plugins (only define here, loaded later)
 zplug "romkatv/powerlevel10k", as:theme, depth:1
@@ -104,4 +105,48 @@ alias pgstart='brew services start postgresql'
 alias pgstop='brew services stop postgresql'
 alias pgrestart='brew services restart postgresql'
 alias pglocal='psql -d postgres'
+
+# Network utilities aliases
+alias myip='curl -s ifconfig.me && echo'
+alias localip='ipconfig getifaddr en0'
+alias ports='netstat -tuln'
+alias listening='lsof -iTCP -sTCP:LISTEN -n -P'
+alias pingg='ping google.com'
+alias flushdns='sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
+
+# Node.js/npm aliases
+alias ni='npm install'
+alias nid='npm install --save-dev'
+alias nig='npm install -g'
+alias nls='npm list --depth=0'
+alias nod='npm outdated'
+alias nup='npm update'
+
+# Dev Container aliases
+alias dcbuild='devcontainer build'
+alias dcup='devcontainer up'
+alias dcopen='devcontainer open'
+alias dcexec='devcontainer exec'
+alias dcstop='devcontainer stop'
+
+# Claude Code aliases
+alias cc='claude'
+alias cchelp='claude --help'
+alias ccauth='claude auth login'
+alias ccstatus='claude auth status'
+
+# pnpm aliases (preferred package manager)
+alias pi='pnpm install'
+alias pa='pnpm add'
+alias pad='pnpm add --save-dev'
+alias pag='pnpm add --global'
+alias pr='pnpm remove'
+alias pls='pnpm list'
+alias pod='pnpm outdated'
+alias pup='pnpm update'
+alias px='pnpm dlx'  # Execute package without installing
+alias prun='pnpm run'
+alias pdev='pnpm run dev'
+alias pbuild='pnpm run build'
+alias ptest='pnpm run test'
 

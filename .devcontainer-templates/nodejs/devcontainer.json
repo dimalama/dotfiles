@@ -1,0 +1,81 @@
+{
+	"name": "Node.js Development",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+	
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": false,
+			"installOhMyZshConfig": false,
+			"upgradePackages": true,
+			"username": "automatic",
+			"userUid": "automatic",
+			"userGid": "automatic"
+		},
+		"ghcr.io/devcontainers/features/git:1": {
+			"ppa": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+			"version": "latest",
+			"enableNonRootDocker": "true",
+			"moby": "true"
+		}
+	},
+
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"editor.formatOnSave": true,
+				"editor.codeActionsOnSave": {
+					"source.fixAll.eslint": "explicit"
+				},
+				"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"typescript.preferences.includePackageJsonAutoImports": "auto"
+			},
+			"extensions": [
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint",
+				"bradlc.vscode-tailwindcss",
+				"ms-vscode.vscode-typescript-next",
+				"formulahendry.auto-rename-tag",
+				"christian-kohler.path-intellisense",
+				"ms-vscode.vscode-json",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"ms-vscode.vim",
+				"Codeium.codeium"
+			]
+		}
+	},
+
+	"forwardPorts": [3000, 3001, 5173, 8080, 8000],
+	"portsAttributes": {
+		"3000": {
+			"label": "Development Server",
+			"onAutoForward": "notify"
+		},
+		"5173": {
+			"label": "Vite Dev Server",
+			"onAutoForward": "notify"
+		}
+	},
+
+	"postCreateCommand": "npm install -g pnpm @anthropic-ai/claude-code && pnpm config set store-dir ~/.pnpm-store",
+	
+	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+
+	"remoteUser": "node",
+	
+	"mounts": [
+		"source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.gitconfig,target=/home/node/.gitconfig,type=bind,consistency=cached"
+	]
+}

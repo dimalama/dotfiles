@@ -1,0 +1,101 @@
+{
+	"name": "Full-Stack Development",
+	"image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+	
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": false,
+			"installOhMyZshConfig": false,
+			"upgradePackages": true,
+			"username": "automatic",
+			"userUid": "automatic",
+			"userGid": "automatic"
+		},
+		"ghcr.io/devcontainers/features/git:1": {
+			"ppa": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+			"version": "latest",
+			"enableNonRootDocker": "true",
+			"moby": "true"
+		},
+		"ghcr.io/devcontainers/features/terraform:1": {
+			"version": "latest",
+			"tflint": "latest",
+			"terragrunt": "latest"
+		}
+	},
+
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"editor.formatOnSave": true,
+				"editor.codeActionsOnSave": {
+					"source.fixAll.eslint": "explicit",
+					"source.organizeImports": "explicit"
+				},
+				"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"python.defaultInterpreterPath": "/usr/local/bin/python",
+				"python.linting.enabled": true,
+				"python.linting.pylintEnabled": false,
+				"python.linting.flake8Enabled": true,
+				"python.formatting.provider": "black",
+				"typescript.preferences.includePackageJsonAutoImports": "auto"
+			},
+			"extensions": [
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint",
+				"ms-python.python",
+				"ms-python.black-formatter",
+				"ms-python.flake8",
+				"ms-toolsai.jupyter",
+				"bradlc.vscode-tailwindcss",
+				"ms-vscode.vscode-typescript-next",
+				"hashicorp.terraform",
+				"ms-azuretools.vscode-docker",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"ms-vscode.vim",
+				"ms-vscode.vscode-json",
+				"redhat.vscode-yaml",
+				"Codeium.codeium"
+			]
+		}
+	},
+
+	"forwardPorts": [3000, 3001, 5000, 5173, 8000, 8080, 9000],
+	"portsAttributes": {
+		"3000": {
+			"label": "Frontend Dev Server",
+			"onAutoForward": "notify"
+		},
+		"5000": {
+			"label": "Backend Dev Server",
+			"onAutoForward": "notify"
+		},
+		"8000": {
+			"label": "API Server",
+			"onAutoForward": "notify"
+		}
+	},
+
+	"postCreateCommand": "npm install -g pnpm @anthropic-ai/claude-code && pip install --user uv && pnpm config set store-dir ~/.pnpm-store",
+	
+	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+
+	"remoteUser": "codespace",
+	
+	"mounts": [
+		"source=${localEnv:HOME}/.ssh,target=/home/codespace/.ssh,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.gitconfig,target=/home/codespace/.gitconfig,type=bind,consistency=cached"
+	]
+}

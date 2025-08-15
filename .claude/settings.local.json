@@ -12,7 +12,8 @@
       "Bash(done)",
       "Bash(for path in gh/config.yml gh-dash/config.yml windsurf/global_rules.md CLAUDE.md)",
       "Bash(do [ -e \"$path\" ])",
-      "Bash(bash:*)"
+      "Bash(bash:*)",
+      "Bash(chmod:*)"
     ],
     "deny": []
   }
