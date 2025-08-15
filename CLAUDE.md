@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This is a dot files project. The purpose of this project to maintain configuration for my work, personal laptops and in case of hard reset to easy configure my laptops by running a few bash scripts. We must focus only on macos and not worry about windows configuration.
 
 ## Setup and Installation Commands
 
@@ -35,11 +35,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Symlink Strategy**: Configuration files are symlinked from this repo to their target locations
 
 ### Key Configurations
-- **Shell**: zsh with powerlevel10k theme and zplug plugin manager
+- **Shell**: zsh with powerlevel10k theme, zplug plugin manager, and modern CLI tool aliases
 - **Editor**: Vim configuration with extensive customization
 - **Git**: Custom aliases for common workflows (l, lg, s, d, ca, go)
 - **VS Code**: Vim mode enabled with smart relative line numbers and auto-formatting
 - **Python**: Uses uv as pip alternative with default .venv virtual environment
+- **Modern CLI Tools**: bat (cat), eza (ls), fd (find), ripgrep (grep), zoxide (cd), fzf, htop, tmux
 
 ### Directory Structure
 ```
@@ -70,6 +71,7 @@ dotfiles/
 - **terraform**: Infrastructure as code with tflint and terraform-docs
 - **checkov**: Security scanning for infrastructure
 - **act**: Local GitHub Actions testing
+- **Modern CLI alternatives**: bat, fd, ripgrep, eza, zoxide, fzf, htop, tree, jq, delta, tmux, diff-so-fancy, tldr, watch
 
 ## Symlink Targets
 The install.sh script creates symlinks from this repo to:

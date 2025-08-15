@@ -4,23 +4,26 @@ feat: <description>
 # Separate the subject from the body with a blank line.
 
 # Explain the motivation for the change and contrast this with previous behavior.
+# Focus on WHY rather than WHAT (the diff shows what changed).
 
 # Use the imperative, present tense: "change" not "changed" nor "changes".
 # Don't capitalize the first letter.
 # No dot (.) at the end.
+# Keep subject line under 50 characters, body wrapped at 72 characters.
 
-# --- COMMIT TYPES ---
-# feat:     A new feature
-# fix:      A bug fix
+# --- COMMIT TYPES (Conventional Commits) ---
+# feat:     A new feature for users
+# fix:      A bug fix for users
 # docs:     Documentation only changes
 # style:    Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 # refactor: A code change that neither fixes a bug nor adds a feature
 # perf:     A code change that improves performance
 # test:     Adding missing tests or correcting existing tests
-# build:    Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-# ci:       Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
-# chore:    Other changes that don't modify src or test files
+# build:    Changes that affect the build system or external dependencies
+# ci:       Changes to CI configuration files and scripts (GitHub Actions, etc)
+# chore:    Other changes that don't modify src or test files (maintenance tasks)
 # revert:   Reverts a previous commit
+# security: A code change that fixes a security issue
 
 # --- OPTIONAL SCOPE ---
 # The scope should be the name of the npm package affected (as perceived by the person reading the changelog generated from the commit messages).
@@ -35,6 +38,17 @@ feat: <description>
 
 # --- FOOTERS ---
 # Footers should contain information about Breaking Changes and reference issues that this commit closes.
-# Example:
+# Examples:
 # Fixes #13
 # Closes #234
+# Resolves #456
+# Refs #789
+# Co-authored-by: Name <email@example.com>
+
+# --- COMMIT MESSAGE EXAMPLES ---
+# feat(auth): add OAuth2 integration for Google login
+# fix(api): handle null response in user endpoint
+# docs(readme): update installation instructions
+# refactor(utils): extract validation logic to separate module
+# perf(database): optimize user query with indexes
+# test(auth): add unit tests for login validation

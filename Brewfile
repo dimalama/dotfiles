@@ -21,6 +21,22 @@ brew 'nvm'
 brew 'vim'
 brew 'the_silver_searcher'
 brew 'powerlevel10k'
+
+# Modern CLI alternatives
+brew 'bat'           # Better cat with syntax highlighting
+brew 'fd'            # Better find
+brew 'ripgrep'       # Better grep
+brew 'eza'           # Better ls (replaces exa)
+brew 'zoxide'        # Better cd with frequency tracking
+brew 'fzf'           # Fuzzy finder
+brew 'htop'          # Better top
+brew 'tree'          # Directory tree viewer
+brew 'jq'            # JSON processor
+brew 'delta'         # Better git diff
+brew 'tmux'          # Terminal multiplexer
+brew 'diff-so-fancy' # Better git diff (referenced in .gitconfig)
+brew 'tldr'          # Simplified man pages
+brew 'watch'         # Execute commands periodically
 cask 'font-meslo-lg-nerd-font'
 brew 'gh'
 brew 'curl'

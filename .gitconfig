@@ -79,6 +79,43 @@
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
+	# Modern workflow aliases
+	# Quick status with short format
+	ss = status --short --branch
+	
+	# Show current branch
+	cb = branch --show-current
+	
+	# Undo last commit but keep changes staged
+	undo = reset --soft HEAD~1
+	
+	# Undo last commit and unstage changes
+	unstage = reset HEAD~1
+	
+	# Quick commit with message
+	cm = commit -m
+	
+	# Amend last commit without editing message
+	amend-quick = commit --amend --no-edit
+	
+	# Show files changed in last commit
+	last = show --name-only
+	
+	# Show commits that touch a specific file
+	file-history = log --follow --patch --
+	
+	# Create a new branch and switch to it
+	nb = checkout -b
+	
+	# List branches sorted by date
+	branches-by-date = branch --sort=-committerdate
+	
+	# Show git tree with all branches
+	tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+	
+	# Squash last n commits
+	squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
+
 	# Merge GitHub pull request on top of the current branch or,
 	# if a branch name is specified, on top of the specified branch
 	mpr = "!f() { \
@@ -123,6 +160,9 @@
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
 
+	# Use file system monitor for better performance
+	fsmonitor = true
+
 [color]
 
 	# Use colors in Git commands that are capable of colored output when
@@ -162,12 +202,20 @@
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = false
 	template = ~/.stCommitMsg
+	# Show diff when editing commit message
+	verbose = true
 
 [diff]
 
 	# Detect copies as well as renames
 	renames = copies
 	tool = windsurf
+	# Better diff algorithm
+	algorithm = histogram
+	# Highlight moved code blocks
+	colorMoved = plain
+	# More intuitive diff prefixes
+	mnemonicPrefix = true
 
 [diff "bin"]
 
@@ -179,17 +227,21 @@
 
 [fetch]
 	prune = true
+	# Also prune tags that no longer exist on remote
+	pruneTags = true
 
 [help]
 
-	# Automatically correct and execute mistyped commands
-	autocorrect = 1
+	# Show autocorrection options instead of auto-executing
+	autocorrect = prompt
 
 [merge]
 
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 	tool = windsurf
+	# Better conflict resolution with zdiff3
+	conflictstyle = zdiff3
 
 [mergetool "windsurf"]
 	cmd = windsurf merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
@@ -209,6 +261,8 @@
 	default = current
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
+	# Automatically set upstream when pushing new branch
+	autoSetupRemote = true
 
 [pull]
   # turn off rebase on pull for compass project
@@ -250,3 +304,26 @@
 
 [init]
 	defaultBranch = main
+
+# Modern Git workflow improvements
+[rebase]
+	# Automatically include --autosquash when doing interactive rebase
+	autoSquash = true
+	# Automatically stash/unstash during rebase
+	autoStash = true
+	# Update refs during rebase
+	updateRefs = true
+
+[branch]
+	# Sort branches by most recently committed
+	sort = -committerdate
+
+[tag]
+	# Sort tags by version
+	sort = version:refname
+
+[rerere]
+	# Remember how you resolved merge conflicts
+	enabled = true
+	# Automatically stage resolved conflicts
+	autoupdate = true

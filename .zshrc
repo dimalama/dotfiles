@@ -49,6 +49,11 @@ zplug load
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Zoxide initialization (better cd)
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init zsh)"
+fi
+
 DEFAULT_USER=$(whoami)
 
 # Azure CLI and Terraform completion (only load once)
@@ -66,6 +71,14 @@ export PATH="/Users/$DEFAULT_USER/.codeium/windsurf/bin:$PATH"
 [[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
 # Add default Python virtual environment
 alias activate='source ~/.venv/bin/activate'
+
+# Modern CLI tool aliases
+alias cat='bat'
+alias ls='eza --long --header --git'
+alias la='eza --long --all --header --git'
+alias tree='eza --tree'
+alias find='fd'
+alias cd='z'  # zoxide integration
 
 # Pyenv configuration
 export PYENV_ROOT="$HOME/.pyenv"

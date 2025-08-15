@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
+# Support for recreating venv
+RECREATE_VENV=false
+if [[ "$1" == "--recreate-venv" ]]; then
+    RECREATE_VENV=true
+fi
+
 echo "Setting up Python environment with pyenv..."
 
 # Ensure pyenv is installed
@@ -29,11 +35,28 @@ if ! command -v uv &> /dev/null; then
   brew install uv
 fi
 
+# Set up default virtual environment
+DEFAULT_VENV_PATH="$HOME/.venv"
+if [[ "$RECREATE_VENV" == true ]] && [[ -d "$DEFAULT_VENV_PATH" ]]; then
+    echo "Removing existing virtual environment..."
+    rm -rf "$DEFAULT_VENV_PATH"
+fi
+
+if [[ ! -d "$DEFAULT_VENV_PATH" ]]; then
+    echo "Creating default virtual environment at $DEFAULT_VENV_PATH..."
+    uv venv "$DEFAULT_VENV_PATH"
+    echo "Virtual environment created. Use 'activate' alias to activate it."
+else
+    echo "Default virtual environment already exists at $DEFAULT_VENV_PATH"
+fi
+
 # Display Python information
 echo ""
 echo "Python setup complete!"
 echo "Pyenv is managing your Python versions."
 echo "Current global Python version: $(pyenv global)"
+echo "Default virtual environment: $DEFAULT_VENV_PATH"
+echo "To activate the venv, run: activate"
 echo "To see all installed versions, run: pyenv versions"
 echo "To install a new version, run: pyenv install <version>"
 echo ""

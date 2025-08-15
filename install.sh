@@ -69,7 +69,7 @@ if ask_confirmation "Do you want to create symlinks?"; then
     create_symlink "$SCRIPT_DIR/windsurf/global_rules.md" "$HOME/.codeium/windsurf/memories/global_rules.md"
 
     mkdir -p "$HOME/.claude"
-    create_symlink "$SCRIPT_DIR/.claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+    create_symlink "$SCRIPT_DIR/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
     # Note: .ssh directory is commented out for security reasons
     # create_symlink "$SCRIPT_DIR/.ssh" "$HOME/.ssh"
 else

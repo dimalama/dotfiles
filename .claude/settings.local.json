@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(rm:*)",
+      "Bash(mkdir:*)",
+      "Bash(for file in .bash_profile .vimrc .vim .gitconfig .zshrc .npmrc .p10k.zsh .stCommitMsg)",
+      "Bash(do [ -e \"$file\" ])",
+      "Bash(echo \"✓ $file exists\")",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(for path in gh/config.yml gh-dash/config.yml windsurf/global_rules.md CLAUDE.md)",
+      "Bash(do [ -e \"$path\" ])",
+      "Bash(bash:*)"
+    ],
+    "deny": []
+  }
+}
