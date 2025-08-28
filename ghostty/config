@@ -1,68 +1,72 @@
-# Ghostty Terminal Configuration - Optimized for Development
+# Ghostty Terminal Configuration - Optimized for Performance & Productivity
 # See: https://ghostty.org/docs/config/reference
 
 # =============================================================================
-# FONT CONFIGURATION - Optimized for coding with ligatures and clarity
+# FONT CONFIGURATION
 # =============================================================================
 font-family = "MesloLGS Nerd Font"
 font-size = 14
-font-feature = +liga,+calt  # Enable ligatures
-font-synthetic-style = false  # Use real bold/italic variants
+font-feature = "+liga"
+font-feature = "+calt"
+font-thicken = true
 
 # =============================================================================
-# THEME AND COLORS - Modern dark theme with good contrast
+# THEME AND COLORS
 # =============================================================================
 theme = catppuccin-mocha
-# Override specific colors for better development experience
 background = #1e1e2e
 foreground = #cdd6f4
 cursor-color = #f5e0dc
 cursor-style = block
-cursor-style-blink = false  # Solid cursor for better focus
 
 # =============================================================================
-# SHELL INTEGRATION - Enhanced terminal features
+# SHELL INTEGRATION
 # =============================================================================
-shell-integration = true
-shell-integration-features = cursor,sudo,title
+shell-integration = detect
 
 # =============================================================================
-# BEHAVIOR AND PERFORMANCE - Optimized for heavy development use
+# BEHAVIOR AND PERFORMANCE
 # =============================================================================
 copy-on-select = true
-scrollback-limit = 50000  # Large scrollback for long build logs
-confirm-close-surface = false  # Don't confirm when closing
-quit-after-last-window-closed = false  # Keep app running
-
-# =============================================================================
-# WINDOW MANAGEMENT - Developer-friendly window behavior
-# =============================================================================
-window-padding-x = 8
-window-padding-y = 8
-window-decoration = true
+scrollback-limit = 100000
 resize-overlay = never
 resize-overlay-position = center
-resize-overlay-duration = 750
+confirm-close-surface = false
+quit-after-last-window-closed = false
+auto-update = check
+focus-follows-mouse = false
+
+# =============================================================================
+# WINDOW MANAGEMENT
+# =============================================================================
+window-padding-x = 12
+window-padding-y = 12
+window-decoration = true
+window-inherit-working-directory = true
+window-inherit-font-size = true
+window-step-resize = false
+window-new-tab-position = current
+window-save-state = default
 
 # =============================================================================
 # macOS SPECIFIC OPTIMIZATIONS
 # =============================================================================
-macos-titlebar-style = system
-macos-option-as-alt = true  # Better Alt key handling
-macos-window-shadow = true
-macos-non-native-fullscreen = false  # Use native fullscreen
+macos-titlebar-style = native
+macos-option-as-alt = true
+macos-titlebar-proxy-icon = visible
+macos-non-native-fullscreen = false
 
 # =============================================================================
-# ADVANCED KEYBINDINGS - Productivity focused
+# KEYBINDINGS - PRODUCTIVITY FOCUSED
 # =============================================================================
-
-# Tab Management
+# Window management
 keybind = cmd+t=new_tab
 keybind = cmd+w=close_surface
-keybind = cmd+shift+t=restore_tab
-keybind = cmd+shift+w=close_all_tabs
+keybind = cmd+shift+w=close_all_windows
+keybind = cmd+n=new_window
+keybind = cmd+shift+n=new_tab
 
-# Quick tab navigation
+# Tab navigation
 keybind = cmd+1=goto_tab:1
 keybind = cmd+2=goto_tab:2
 keybind = cmd+3=goto_tab:3
@@ -72,87 +76,67 @@ keybind = cmd+6=goto_tab:6
 keybind = cmd+7=goto_tab:7
 keybind = cmd+8=goto_tab:8
 keybind = cmd+9=goto_tab:9
-keybind = cmd+0=goto_tab:10
-
-# Tab navigation
 keybind = cmd+shift+left_bracket=previous_tab
 keybind = cmd+shift+right_bracket=next_tab
-keybind = cmd+alt+left=previous_tab
-keybind = cmd+alt+right=next_tab
 
-# Split Management - Essential for development
+# Pane management
 keybind = cmd+d=new_split:right
 keybind = cmd+shift+d=new_split:down
-keybind = cmd+shift+w=close_split
-keybind = cmd+alt+h=goto_split:left
-keybind = cmd+alt+j=goto_split:down
-keybind = cmd+alt+k=goto_split:up
-keybind = cmd+alt+l=goto_split:right
+keybind = cmd+shift+left=goto_split:left
+keybind = cmd+shift+right=goto_split:right
+keybind = cmd+shift+up=goto_split:up
+keybind = cmd+shift+down=goto_split:down
+keybind = cmd+shift+z=toggle_split_zoom
 
-# Split resizing
-keybind = cmd+ctrl+left=resize_split:left,10
-keybind = cmd+ctrl+right=resize_split:right,10
-keybind = cmd+ctrl+up=resize_split:up,10
-keybind = cmd+ctrl+down=resize_split:down,10
-
-# Text manipulation - Developer essentials
-keybind = cmd+shift+c=copy_to_clipboard
-keybind = cmd+shift+v=paste_from_clipboard
-keybind = cmd+a=select_all
-keybind = cmd+f=search
-keybind = cmd+g=search_next
-keybind = cmd+shift+g=search_previous
-
-# Zoom controls
-keybind = cmd+equal=increase_font_size:1
+# Font size
+keybind = cmd+plus=increase_font_size:1
 keybind = cmd+minus=decrease_font_size:1
 keybind = cmd+zero=reset_font_size
 
-# Window management
-keybind = cmd+shift+enter=toggle_fullscreen
-keybind = cmd+n=new_window
+# Search and selection
+keybind = cmd+f=toggle_quick_terminal
+keybind = cmd+shift+f=inspector:toggle
 
-# Quick actions for development
+# Scrollback
 keybind = cmd+k=clear_screen
-keybind = cmd+shift+k=reset
-
-# Configuration reload - Essential for tweaking
-keybind = cmd+shift+comma=reload_config
+keybind = shift+page_up=scroll_page_up
+keybind = shift+page_down=scroll_page_down
+keybind = cmd+up=scroll_to_top
+keybind = cmd+down=scroll_to_bottom
 
 # =============================================================================
-# MOUSE AND INTERACTION - Smooth developer experience
+# MOUSE AND INTERACTION
 # =============================================================================
 mouse-scroll-multiplier = 3
-mouse-hide-while-typing = true
 selection-foreground = #1e1e2e
 selection-background = #f5e0dc
 
 # =============================================================================
-# CLIPBOARD AND INTEGRATION
+# CLIPBOARD
 # =============================================================================
 clipboard-read = allow
 clipboard-write = allow
-clipboard-trim-trailing-spaces = true
 
 # =============================================================================
-# ADVANCED FEATURES - Power user settings
+# ADVANCED FEATURES & GPU ACCELERATION
 # =============================================================================
-# Quick terminal toggle (requires system setup)
-# keybind = global:cmd+grave=toggle_quick_terminal
-
-# Custom title for better window management
-title = "Ghostty - {{shell_name}}"  
-
-# Working directory handling
+title = "Ghostty"
 working-directory = home
 
-# =============================================================================
-# BELL AND NOTIFICATIONS - Minimal distraction
-# =============================================================================
-audio-bell = false
-visual-bell = false
+# Performance optimizations
+gtk-single-instance = false
+gtk-adwaita = false
 
-# =============================================================================
-# COMPATIBILITY - Ensure broad terminal compatibility
-# =============================================================================
-term = xterm-256color
+# Shell integration enhancements
+osc-color-report-format = 8-bit
+
+# Advanced rendering
+font-codepoint-map = "U+E0A0-U+E0A3,U+E0B0-U+E0BF,U+E0C0-U+E0C7,U+E0CA-U+E0CA,U+E0CC-U+E0D2,U+E0D4-U+E0D4,U+23FB-U+23FE,U+2665-U+2665,U+26A1-U+26A1,U+2B58-U+2B58=MesloLGS Nerd Font"
+
+# Image support
+image-storage-limit = 320000000
+
+# Terminal features
+link-url = true
+unfocused-split-opacity = 0.7
+unfocused-split-fill = #313244
