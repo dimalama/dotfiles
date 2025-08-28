@@ -1,13 +1,12 @@
 cask_args appdir: '/Applications'
 
 # DB
-brew "postgresql"
-brew "postgis"
-brew "pgvector"
-brew "pgcli"
+#brew "postgresql"
+#brew "postgis"
+#brew "pgvector"
+#brew "pgcli"
 
 
-tap 'homebrew/cask-fonts'
 
 brew 'grep'
 brew 'openssh'
@@ -47,9 +46,9 @@ brew 'syncthing'
 brew 'wget'            # HTTP/FTP file downloader
 brew 'nmap'            # Network mapper/port scanner
 brew 'netcat'          # Network utility for reading/writing network connections
-brew 'telnet'          # Network protocol for interactive communication
+# brew 'telnet'        # Provided by inetutils to avoid conflicts
 brew 'whois'           # Domain registration lookup
-brew 'dnsutils'        # DNS utilities including dig, nslookup
+brew 'bind'            # DNS utilities including dig, nslookup
 brew 'inetutils'       # Network utilities including netstat, ping
 brew 'mtr'             # Network diagnostic tool (traceroute + ping)
 brew 'iperf3'          # Network bandwidth measurement
@@ -68,18 +67,30 @@ brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'uv'
 brew 'just'
+brew 'awscli'           # AWS Command Line Interface
 
-cask 'sequel-pro'
 cask 'iterm2'
 cask 'visual-studio-code'
 cask 'windsurf'         # AI-powered code editor
 cask 'slack'
 cask 'spotify'
-cask 'microsoft-edge'
-cask 'rectangle'
-cask 'docker'
+#cask 'microsoft-edge'
+#cask 'rectangle'
+cask 'docker-desktop'
+cask '1password'          # Password manager
+brew '1password-cli'     # 1Password command-line tool
+cask 'grammarly-desktop'  # Grammar and spell checker
+# cask 'xcode'            # Install from Mac App Store instead
+cask 'obsidian'           # Note-taking and knowledge management
+cask 'nordvpn'            # VPN client
+# cask 'displaylink'      # Deprecated, install manually if needed
 
 # Dev Container tools
 brew 'devcontainer'    # Dev Container CLI
 
+# Manual installations required:
+# - Xcode: Install from Mac App Store
+# - DisplayLink: Driver deprecated in Homebrew, install from https://www.synaptics.com/products/displaylink-graphics/downloads/macos if needed
+# - Cloud Desktop: Enterprise-specific application
+# 
 # Note: Claude Code CLI installed via npm in post-install step

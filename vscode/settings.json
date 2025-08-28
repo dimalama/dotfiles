@@ -252,7 +252,7 @@
   "git.timeline.showUncommitted": true,
   "timeline.pageOnScroll": true,
   "gitlens.autolinks": [],
-  "terminal.integrated.fontFamily": "'SourceCodePro+Powerline+Awesome Regular'",
+  "terminal.integrated.fontFamily": "'MesloLGS Nerd Font'",
   "terminal.explorerKind": "external",
   "terminal.integrated.automationProfile.osx": {},
   "terminal.external.osxExec": "iTerm.app",

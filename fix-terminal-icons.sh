@@ -34,6 +34,14 @@ To properly display icons in your terminal, follow these steps:
 
 6. After changing the font, restart your terminal
 
+TROUBLESHOOTING:
+If icons still don't display correctly after font configuration,
+run the powerlevel10k configuration wizard:
+
+    p10k configure
+
+This will help you choose the correct icon set for your terminal.
+
 =================================================================
 "
 

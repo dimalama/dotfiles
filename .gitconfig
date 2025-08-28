@@ -200,7 +200,7 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = false
+	gpgsign = true
 	template = ~/.stCommitMsg
 	# Show diff when editing commit message
 	verbose = true
@@ -292,10 +292,16 @@
 
 [gpg]
 	program = gpg
+    format = ssh
+    
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
-[user]
-	name = Dima Lukianenko
-	email = dima.lukianenko@dimalama.com
+# Personal user information is included from a separate file
+# Create ~/.gitconfig.local with your personal details
+[include]
+    path = ~/.gitconfig.local
+
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true

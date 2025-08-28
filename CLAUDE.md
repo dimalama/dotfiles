@@ -32,6 +32,9 @@ This is a dot files project. The purpose of this project to maintain configurati
 # Fix terminal display issues
 ./fix-git-branch-display.sh
 ./fix-terminal-icons.sh
+
+# Fix powerlevel10k icons if not displaying correctly
+p10k configure
 ```
 
 ## Architecture and Key Components

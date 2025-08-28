@@ -13,7 +13,15 @@
       "Bash(for path in gh/config.yml gh-dash/config.yml windsurf/global_rules.md CLAUDE.md)",
       "Bash(do [ -e \"$path\" ])",
       "Bash(bash:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(brew bundle:*)",
+      "Bash(brew search:*)",
+      "Bash(brew unlink:*)",
+      "Bash(grep:*)",
+      "Bash(./fix-terminal-icons.sh:*)",
+      "Bash(source:*)",
+      "Bash(fc-list:*)",
+      "Bash(ps:*)"
     ],
     "deny": []
   }
