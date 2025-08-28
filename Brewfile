@@ -70,6 +70,7 @@ brew 'just'
 brew 'awscli'           # AWS Command Line Interface
 
 cask 'iterm2'
+cask 'ghostty'            # Fast, native terminal emulator
 cask 'visual-studio-code'
 cask 'windsurf'         # AI-powered code editor
 cask 'slack'
@@ -78,10 +79,11 @@ cask 'spotify'
 #cask 'rectangle'
 cask 'docker-desktop'
 cask '1password'          # Password manager
-brew '1password-cli'     # 1Password command-line tool
+cask '1password-cli'     # 1Password command-line tool
 cask 'grammarly-desktop'  # Grammar and spell checker
 # cask 'xcode'            # Install from Mac App Store instead
 cask 'obsidian'           # Note-taking and knowledge management
+cask 'todoist'            # Task management and productivity
 cask 'nordvpn'            # VPN client
 # cask 'displaylink'      # Deprecated, install manually if needed
 

@@ -1,0 +1,158 @@
+# Ghostty Terminal Configuration - Optimized for Development
+# See: https://ghostty.org/docs/config/reference
+
+# =============================================================================
+# FONT CONFIGURATION - Optimized for coding with ligatures and clarity
+# =============================================================================
+font-family = "MesloLGS Nerd Font"
+font-size = 14
+font-feature = +liga,+calt  # Enable ligatures
+font-synthetic-style = false  # Use real bold/italic variants
+
+# =============================================================================
+# THEME AND COLORS - Modern dark theme with good contrast
+# =============================================================================
+theme = catppuccin-mocha
+# Override specific colors for better development experience
+background = #1e1e2e
+foreground = #cdd6f4
+cursor-color = #f5e0dc
+cursor-style = block
+cursor-style-blink = false  # Solid cursor for better focus
+
+# =============================================================================
+# SHELL INTEGRATION - Enhanced terminal features
+# =============================================================================
+shell-integration = true
+shell-integration-features = cursor,sudo,title
+
+# =============================================================================
+# BEHAVIOR AND PERFORMANCE - Optimized for heavy development use
+# =============================================================================
+copy-on-select = true
+scrollback-limit = 50000  # Large scrollback for long build logs
+confirm-close-surface = false  # Don't confirm when closing
+quit-after-last-window-closed = false  # Keep app running
+
+# =============================================================================
+# WINDOW MANAGEMENT - Developer-friendly window behavior
+# =============================================================================
+window-padding-x = 8
+window-padding-y = 8
+window-decoration = true
+resize-overlay = never
+resize-overlay-position = center
+resize-overlay-duration = 750
+
+# =============================================================================
+# macOS SPECIFIC OPTIMIZATIONS
+# =============================================================================
+macos-titlebar-style = system
+macos-option-as-alt = true  # Better Alt key handling
+macos-window-shadow = true
+macos-non-native-fullscreen = false  # Use native fullscreen
+
+# =============================================================================
+# ADVANCED KEYBINDINGS - Productivity focused
+# =============================================================================
+
+# Tab Management
+keybind = cmd+t=new_tab
+keybind = cmd+w=close_surface
+keybind = cmd+shift+t=restore_tab
+keybind = cmd+shift+w=close_all_tabs
+
+# Quick tab navigation
+keybind = cmd+1=goto_tab:1
+keybind = cmd+2=goto_tab:2
+keybind = cmd+3=goto_tab:3
+keybind = cmd+4=goto_tab:4
+keybind = cmd+5=goto_tab:5
+keybind = cmd+6=goto_tab:6
+keybind = cmd+7=goto_tab:7
+keybind = cmd+8=goto_tab:8
+keybind = cmd+9=goto_tab:9
+keybind = cmd+0=goto_tab:10
+
+# Tab navigation
+keybind = cmd+shift+left_bracket=previous_tab
+keybind = cmd+shift+right_bracket=next_tab
+keybind = cmd+alt+left=previous_tab
+keybind = cmd+alt+right=next_tab
+
+# Split Management - Essential for development
+keybind = cmd+d=new_split:right
+keybind = cmd+shift+d=new_split:down
+keybind = cmd+shift+w=close_split
+keybind = cmd+alt+h=goto_split:left
+keybind = cmd+alt+j=goto_split:down
+keybind = cmd+alt+k=goto_split:up
+keybind = cmd+alt+l=goto_split:right
+
+# Split resizing
+keybind = cmd+ctrl+left=resize_split:left,10
+keybind = cmd+ctrl+right=resize_split:right,10
+keybind = cmd+ctrl+up=resize_split:up,10
+keybind = cmd+ctrl+down=resize_split:down,10
+
+# Text manipulation - Developer essentials
+keybind = cmd+shift+c=copy_to_clipboard
+keybind = cmd+shift+v=paste_from_clipboard
+keybind = cmd+a=select_all
+keybind = cmd+f=search
+keybind = cmd+g=search_next
+keybind = cmd+shift+g=search_previous
+
+# Zoom controls
+keybind = cmd+equal=increase_font_size:1
+keybind = cmd+minus=decrease_font_size:1
+keybind = cmd+zero=reset_font_size
+
+# Window management
+keybind = cmd+shift+enter=toggle_fullscreen
+keybind = cmd+n=new_window
+
+# Quick actions for development
+keybind = cmd+k=clear_screen
+keybind = cmd+shift+k=reset
+
+# Configuration reload - Essential for tweaking
+keybind = cmd+shift+comma=reload_config
+
+# =============================================================================
+# MOUSE AND INTERACTION - Smooth developer experience
+# =============================================================================
+mouse-scroll-multiplier = 3
+mouse-hide-while-typing = true
+selection-foreground = #1e1e2e
+selection-background = #f5e0dc
+
+# =============================================================================
+# CLIPBOARD AND INTEGRATION
+# =============================================================================
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+
+# =============================================================================
+# ADVANCED FEATURES - Power user settings
+# =============================================================================
+# Quick terminal toggle (requires system setup)
+# keybind = global:cmd+grave=toggle_quick_terminal
+
+# Custom title for better window management
+title = "Ghostty - {{shell_name}}"  
+
+# Working directory handling
+working-directory = home
+
+# =============================================================================
+# BELL AND NOTIFICATIONS - Minimal distraction
+# =============================================================================
+audio-bell = false
+visual-bell = false
+
+# =============================================================================
+# COMPATIBILITY - Ensure broad terminal compatibility
+# =============================================================================
+term = xterm-256color

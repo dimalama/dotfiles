@@ -20,6 +20,10 @@ source $ZPLUG_HOME/init.zsh
 #editor
 export EDITOR=vim
 
+# Terminal application - Set Ghostty as default
+export TERMINAL=ghostty
+export TERM_PROGRAM=Ghostty
+
 # NVM setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$BREW_PREFIX/opt/nvm/nvm.sh" ] && . "$BREW_PREFIX/opt/nvm/nvm.sh"

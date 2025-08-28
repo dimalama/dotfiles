@@ -70,6 +70,12 @@ if ask_confirmation "Do you want to create symlinks?"; then
 
     mkdir -p "$HOME/.claude"
     create_symlink "$SCRIPT_DIR/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+    create_symlink "$SCRIPT_DIR/.claude/settings.local.json" "$HOME/.claude/settings.local.json"
+    
+    # Ghostty configuration
+    mkdir -p "$HOME/.config/ghostty/themes"
+    create_symlink "$SCRIPT_DIR/ghostty/config" "$HOME/.config/ghostty/config"
+    create_symlink "$SCRIPT_DIR/ghostty/themes" "$HOME/.config/ghostty/themes"
     # Note: .ssh directory is commented out for security reasons
     # create_symlink "$SCRIPT_DIR/.ssh" "$HOME/.ssh"
 else
@@ -99,6 +105,14 @@ if ask_confirmation "Do you want to install Claude Code CLI?"; then
     "$SCRIPT_DIR/setup-claude-code.sh"
 else
     echo "Skipping Claude Code CLI setup."
+fi
+
+# Ghostty setup
+if ask_confirmation "Do you want to set up Ghostty as default terminal?"; then
+    echo "Setting up Ghostty..."
+    "$SCRIPT_DIR/setup-ghostty.sh"
+else
+    echo "Skipping Ghostty setup."
 fi
 
 echo '====== Installation complete ======'

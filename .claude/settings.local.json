@@ -1,4 +1,8 @@
 {
+  "env": {
+    "TERMINAL": "ghostty",
+    "TERM_PROGRAM": "Ghostty"
+  },
   "permissions": {
     "allow": [
       "Bash(find:*)",
@@ -21,7 +25,11 @@
       "Bash(./fix-terminal-icons.sh:*)",
       "Bash(source:*)",
       "Bash(fc-list:*)",
-      "Bash(ps:*)"
+      "Bash(ps:*)",
+      "WebFetch(domain:ghostty.org)",
+      "WebFetch(domain:docs.codeium.com)",
+      "WebFetch(domain:docs.windsurf.com)",
+      "Bash(claude /config)"
     ],
     "deny": []
   }

@@ -255,7 +255,7 @@
   "terminal.integrated.fontFamily": "'MesloLGS Nerd Font'",
   "terminal.explorerKind": "external",
   "terminal.integrated.automationProfile.osx": {},
-  "terminal.external.osxExec": "iTerm.app",
+  "terminal.external.osxExec": "Ghostty.app",
   "githubPullRequests.pullBranch": "never",
   "errorLens.lintFilePaths": {
     "eslint": ["**/*.eslintrc.{js,cjs,yaml,yml,json}", "**/*package.json"],

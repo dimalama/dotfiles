@@ -29,6 +29,9 @@ This is a dot files project. The purpose of this project to maintain configurati
 # Install Claude Code CLI
 ./setup-claude-code.sh
 
+# Set up Ghostty terminal (includes system optimization)
+./setup-ghostty.sh
+
 # Fix terminal display issues
 ./fix-git-branch-display.sh
 ./fix-terminal-icons.sh
