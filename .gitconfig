@@ -200,7 +200,6 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
 	template = ~/.stCommitMsg
 	# Show diff when editing commit message
 	verbose = true
@@ -290,15 +289,16 @@
 
 	insteadOf = "gist:"
 
-[gpg]
-	program = gpg
-    format = ssh
-    
-[gpg "ssh"]
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+# GPG settings moved to environment-specific config files
 
-# Personal user information is included from a separate file
-# Create ~/.gitconfig.local with your personal details
+# Environment-specific configuration
+# Use setup-git-environment.sh to configure for personal vs work
+[include]
+    path = ~/.gitconfig.personal
+[include]
+    path = ~/.gitconfig.work
+    
+# Fallback to local config
 [include]
     path = ~/.gitconfig.local
 

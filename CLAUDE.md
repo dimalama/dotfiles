@@ -32,6 +32,12 @@ This is a dot files project. The purpose of this project to maintain configurati
 # Set up Ghostty terminal (includes system optimization)
 ./setup-ghostty.sh
 
+# Set up Anki spaced repetition system
+./setup-anki.sh
+
+# Configure Git environment (personal vs work)
+./setup-git-environment.sh
+
 # Fix terminal display issues
 ./fix-git-branch-display.sh
 ./fix-terminal-icons.sh
@@ -50,12 +56,13 @@ p10k configure
 ### Key Configurations
 - **Shell**: zsh with powerlevel10k theme, zplug plugin manager, and modern CLI tool aliases
 - **Editor**: Vim configuration with extensive customization
-- **Git**: Custom aliases for common workflows, modern settings (zdiff3, autosquash, autoStash)
+- **Git**: Custom aliases for common workflows, modern settings (zdiff3, autosquash, autoStash), environment-specific configurations
 - **Editors**: VS Code with vim mode, Windsurf AI-powered editor with smart relative line numbers and auto-formatting
 - **Python**: Uses uv as pip alternative with pyenv version management and default .venv virtual environment
 - **Node.js**: Runtime with nvm version management, pnpm (preferred) and npm package managers with helpful aliases
 - **Network Tools**: dig, nmap, netcat, telnet, whois, wget, and other essential network utilities
 - **Modern CLI Tools**: bat (cat), eza (ls), fd (find), ripgrep (grep), zoxide (cd), fzf, htop, tmux
+- **Learning Tools**: Anki spaced repetition system with curated add-ons and deck management
 
 ### Directory Structure
 ```
@@ -65,12 +72,15 @@ dotfiles/
 ├── brew.sh                 # Homebrew installation script
 ├── vscode.sh               # VS Code configuration
 ├── setup-python.sh         # Python environment setup
+├── setup-anki.sh           # Anki spaced repetition setup
+├── setup-git-environment.sh # Git environment configuration
 ├── .zshrc                  # Shell configuration
 ├── .gitconfig              # Git aliases and settings
 ├── .vimrc                  # Vim configuration
 ├── vscode/settings.json    # VS Code settings
 ├── gh/config.yml           # GitHub CLI configuration
 ├── gh-dash/config.yml      # GitHub dashboard configuration
+├── anki/                   # Anki configuration and decks
 └── windsurf/global_rules.md # Windsurf coding guidelines
 ```
 
@@ -100,9 +110,59 @@ The install.sh script creates symlinks from this repo to:
 - ~/.claude/CLAUDE.md
 - ~/Library/Application Support/Code/User/settings.json
 
+## Git Environment Configuration
+
+The dotfiles provide sophisticated Git configuration management for personal vs work environments:
+
+### Environment Selection
+The script prompts you to choose between personal or work environment setups:
+
+### Personal Environment
+- **SSH Signing**: Uses 1Password SSH agent for commit signing
+- **Auto-detection**: Automatically finds and configures available SSH keys
+- **GitHub Integration**: Pre-configured for GitHub CLI authentication
+- **Enhanced Security**: Requires signed commits and uses secure credential helpers
+- **Configuration**: `~/.gitconfig.personal` (symlinked from template, excluded from version control)
+
+### Work Environment  
+- **Enterprise-Ready**: Includes corporate proxy, certificate, and GitHub Enterprise settings
+- **Conservative Defaults**: Safer push/pull behavior, disabled auto-remote setup
+- **No Dependencies**: No 1Password requirement, optional GPG signing
+- **Customizable**: Commented configuration blocks for easy enterprise customization
+- **Configuration**: `~/.gitconfig.work` (symlinked from template, excluded from version control)
+
+### Setup Process
+```bash
+# Run the environment setup script
+./setup-git-environment.sh
+
+# The script will:
+# 1. Prompt you to choose environment type (personal/work)
+# 2. Create appropriate symbolic links to templates
+# 3. Configure SSH keys automatically (personal only)
+# 4. Verify 1Password installation (personal only)
+```
+
+### Manual Configuration
+```bash
+# Manually copy and customize templates if needed
+cp .gitconfig.personal.template ~/.gitconfig.personal  # Personal laptop
+cp .gitconfig.work.template ~/.gitconfig.work          # Work laptop
+
+# Edit the files to match your specific requirements
+# Templates include comprehensive options and examples
+```
+
+### Configuration Architecture
+- **Main Config**: `.gitconfig` contains shared aliases and settings
+- **Environment Configs**: Included conditionally via `[include]` sections
+- **Template System**: Version-controlled templates with user-specific instances excluded
+- **Symlink Strategy**: Templates are symlinked to home directory for easy updates
+
 ## Important Notes
 - Architecture-aware setup (ARM64 vs x86_64 Homebrew paths)
 - Existing files are backed up before symlinking
 - VS Code key repeat is enabled for vim mode
 - Python setup ensures latest version with proper PATH configuration
+- Git environment configurations are excluded from version control for security
 - All scripts use `set -e` for error handling

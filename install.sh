@@ -115,4 +115,20 @@ else
     echo "Skipping Ghostty setup."
 fi
 
+# Anki setup
+if ask_confirmation "Do you want to set up Anki configuration?"; then
+    echo "Setting up Anki..."
+    "$SCRIPT_DIR/setup-anki.sh"
+else
+    echo "Skipping Anki setup."
+fi
+
+# Git environment setup
+if ask_confirmation "Do you want to configure Git environment (personal vs work)?"; then
+    echo "Setting up Git environment..."
+    "$SCRIPT_DIR/setup-git-environment.sh"
+else
+    echo "Skipping Git environment setup."
+fi
+
 echo '====== Installation complete ======'

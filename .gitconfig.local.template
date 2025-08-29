@@ -1,0 +1,24 @@
+# Personal Git Configuration Template
+# Copy this file to ~/.gitconfig.local and fill in your details
+# This file is excluded from version control via .gitignore
+
+[user]
+    name = Your Full Name
+    email = your.email@example.com
+    # Optional: GitHub username
+    # username = yourusername
+
+[github]
+    user = yourusername
+
+# Optional: GPG signing key (if not using SSH signing)
+# [user]
+#     signingkey = YOUR_GPG_KEY_ID
+
+# Optional: Custom settings per repository or organization
+# [includeIf "gitdir:~/work/"]
+#     path = ~/.gitconfig.work
+
+# Optional: Credential helpers (if needed)
+# [credential]
+#     helper = osxkeychain

@@ -84,6 +84,7 @@ cask 'grammarly-desktop'  # Grammar and spell checker
 # cask 'xcode'            # Install from Mac App Store instead
 cask 'obsidian'           # Note-taking and knowledge management
 cask 'todoist'            # Task management and productivity
+cask 'anki'               # Spaced repetition flashcard system
 cask 'nordvpn'            # VPN client
 # cask 'displaylink'      # Deprecated, install manually if needed
 

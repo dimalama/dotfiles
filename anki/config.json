@@ -1,0 +1,60 @@
+{
+  "preferences": {
+    "dayLearnFirst": true,
+    "newSpread": 0,
+    "collapseTime": 1200,
+    "timeLim": 0,
+    "estTimes": true,
+    "dueCounts": true,
+    "curDeck": 1,
+    "nextPos": 1,
+    "sortType": "noteFld",
+    "sortBackwards": false,
+    "addToCur": true,
+    "dayOffset": 4,
+    "schedVer": 2,
+    "rollover": 4,
+    "newBury": true,
+    "revBury": true,
+    "showTimer": false,
+    "showProgress": true,
+    "showEstimates": true,
+    "showDueCounts": true
+  },
+  "deck_configs": {
+    "default": {
+      "name": "Default",
+      "new": {
+        "delays": [1, 10],
+        "ints": [1, 4, 0],
+        "initialFactor": 2500,
+        "separate": true,
+        "order": 1,
+        "perDay": 20
+      },
+      "rev": {
+        "perDay": 200,
+        "ease4": 1.3,
+        "fuzz": 0.05,
+        "minSpace": 1,
+        "ivlFct": 1.0,
+        "maxIvl": 36500,
+        "hardFactor": 1.2
+      },
+      "lapse": {
+        "delays": [10],
+        "mult": 0.0,
+        "minInt": 1,
+        "leechFails": 8,
+        "leechAction": 0
+      }
+    }
+  },
+  "addons": [
+    "1771074083",
+    "2055492159",
+    "874215009",
+    "1046608507",
+    "1612375712"
+  ]
+}

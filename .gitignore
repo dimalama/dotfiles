@@ -1,14 +1,26 @@
 # Security and sensitive files
-.ssh
-.secrets
+.ssh/
+.secrets/
 .env
 .env.local
 .env.*.local
 *.pem
 *.key
+*.p12
+*.pfx
 id_rsa*
 id_ed25519*
 .gitconfig.local
+.gitconfig.work
+.gitconfig.personal
+*.gpg
+.gnupg/
+.aws/
+.azure/
+.gcp/
+config.local.*
+*_local.conf
+*_local.config
 
 # macOS
 .DS_Store

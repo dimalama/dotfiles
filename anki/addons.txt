@@ -1,0 +1,15 @@
+# Recommended Anki Add-ons
+# Install these add-on codes in Anki: Tools > Add-ons > Get Add-ons
+
+1771074083  # Review Heatmap - Visual calendar showing review activity
+2055492159  # AnkiConnect - API for external applications to communicate with Anki
+874215009   # Hierarchical Tags - Better tag organization and display
+1046608507  # Load Balanced Scheduler - Advanced scheduling algorithm
+1612375712  # Editor Live Preview - Real-time preview while editing cards
+
+# Additional useful add-ons (optional):
+# 1374772155  # Image Occlusion Enhanced - Create cloze deletions on images
+# 1322529746  # Customize Keyboard Shortcuts - Modify default shortcuts
+# 2084557901  # FSRS4Anki Helper - Free Spaced Repetition Scheduler
+# 1508308734  # Night Mode - Dark theme for Anki
+# 1436550454  # Progress Bar - Shows progress during reviews

@@ -1,0 +1,36 @@
+# Personal Git Configuration Template
+# Copy this file to ~/.gitconfig.personal and customize for your personal laptop
+# This file is excluded from version control via .gitignore
+
+[user]
+    name = 
+    email = 
+    signingkey = ~/.ssh/YOUR_SSH_KEY.pub
+
+[github]
+    user = dimalama
+
+[gpg]
+    format = ssh
+    
+[gpg "ssh"]
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+    # Fallback to system SSH agent if 1Password is not available
+    # program = /usr/bin/ssh-keygen
+
+[commit]
+    gpgsign = true
+
+# 1Password specific settings
+[credential "https://github.com"]
+    helper = 
+    helper = !gh auth git-credential
+
+[credential "https://gist.github.com"]
+    helper = 
+    helper = !gh auth git-credential
+
+# Enhanced security for personal repositories
+[push]
+    # Require signed commits
+    gpgSign = true

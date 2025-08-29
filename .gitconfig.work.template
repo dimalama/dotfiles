@@ -1,0 +1,33 @@
+# Work Git Configuration Template
+# Copy this file to ~/.gitconfig.work and customize for your work laptop
+# This file is excluded from version control via .gitignore
+
+[user]
+    name = 
+    email = 
+    # No SSH signing key for work environment
+
+[github]
+    user = 
+
+# Work-specific settings - no 1Password SSH signing
+[commit]
+    gpgsign = false
+    # Optional: Enable GPG signing for work if corporate policy requires
+    # gpgsign = true
+
+# Conservative settings for enterprise environment
+[push]
+    # Don't auto-setup remote to prevent accidental pushes to wrong repos
+    autoSetupRemote = false
+    # Always confirm before pushing
+    default = simple
+
+[pull]
+    # Safer default for corporate environments
+    rebase = false
+
+# Disable some modern features that might not be supported
+[rebase]
+    autoSquash = false
+    autoStash = false
