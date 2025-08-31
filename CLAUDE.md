@@ -58,11 +58,13 @@ p10k configure
 - **Editor**: Vim configuration with extensive customization
 - **Git**: Custom aliases for common workflows, modern settings (zdiff3, autosquash, autoStash), environment-specific configurations
 - **Editors**: VS Code with vim mode, Windsurf AI-powered editor with smart relative line numbers and auto-formatting
+- **Browser**: Brave privacy-focused web browser
 - **Python**: Uses uv as pip alternative with pyenv version management and default .venv virtual environment
 - **Node.js**: Runtime with nvm version management, pnpm (preferred) and npm package managers with helpful aliases
 - **Network Tools**: dig, nmap, netcat, telnet, whois, wget, and other essential network utilities
 - **Modern CLI Tools**: bat (cat), eza (ls), fd (find), ripgrep (grep), zoxide (cd), fzf, htop, tmux
 - **Learning Tools**: Anki spaced repetition system with curated add-ons and deck management
+- **Productivity Tools**: Alfred application launcher, Rectangle window management, Flux blue light filter
 
 ### Directory Structure
 ```
@@ -158,6 +160,13 @@ cp .gitconfig.work.template ~/.gitconfig.work          # Work laptop
 - **Environment Configs**: Included conditionally via `[include]` sections
 - **Template System**: Version-controlled templates with user-specific instances excluded
 - **Symlink Strategy**: Templates are symlinked to home directory for easy updates
+
+## Manual Installations
+Some tools require manual installation and cannot be automated. See [manual-installs.md](manual-installs.md) for:
+- App Store applications (Xcode, etc.)
+- Hardware-specific drivers
+- Enterprise applications
+- Manual configuration steps
 
 ## Important Notes
 - Architecture-aware setup (ARM64 vs x86_64 Homebrew paths)

@@ -75,8 +75,9 @@ cask 'visual-studio-code'
 cask 'windsurf'         # AI-powered code editor
 cask 'slack'
 cask 'spotify'
+cask 'brave-browser'      # Privacy-focused web browser
 #cask 'microsoft-edge'
-#cask 'rectangle'
+cask 'rectangle'         # Window management tool
 cask 'docker-desktop'
 cask '1password'          # Password manager
 cask '1password-cli'     # 1Password command-line tool
@@ -85,15 +86,17 @@ cask 'grammarly-desktop'  # Grammar and spell checker
 cask 'obsidian'           # Note-taking and knowledge management
 cask 'todoist'            # Task management and productivity
 cask 'anki'               # Spaced repetition flashcard system
-cask 'nordvpn'            # VPN client
+# cask 'nordvpn'          # VPN client - moved to manual-installs.md
+cask 'alfred'             # Application launcher and productivity tool
+cask 'flux'               # Blue light filter for better sleep
 # cask 'displaylink'      # Deprecated, install manually if needed
 
 # Dev Container tools
 brew 'devcontainer'    # Dev Container CLI
 
-# Manual installations required:
+# Manual installations required - see manual-installs.md for complete list:
 # - Xcode: Install from Mac App Store
-# - DisplayLink: Driver deprecated in Homebrew, install from https://www.synaptics.com/products/displaylink-graphics/downloads/macos if needed
+# - DisplayLink: Driver deprecated in Homebrew, install manually if needed
 # - Cloud Desktop: Enterprise-specific application
 # 
 # Note: Claude Code CLI installed via npm in post-install step
