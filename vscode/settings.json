@@ -208,7 +208,7 @@
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.find.autoFindInSelection": "multiline",
   "terminal.integrated.defaultLocation": "editor",
-  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.osx": "ghostty",
   "terminal.integrated.profiles.osx": {
     "bash": {
       "path": "bash",
@@ -238,6 +238,10 @@
     "iTerm.app": {
       "path": "/usr/local/bin/zsh",
       "args": ["-l"]
+    },
+    "ghostty": {
+      "path": "ghostty",
+      "icon": "terminal"
     }
   },
   "editor.bracketPairColorization.enabled": true,
