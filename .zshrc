@@ -154,3 +154,6 @@ alias pdev='pnpm run dev'
 alias pbuild='pnpm run build'
 alias ptest='pnpm run test'
 
+
+# Added by Windsurf
+export PATH="~/.codeium/windsurf/bin:$PATH"

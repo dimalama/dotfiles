@@ -71,7 +71,10 @@ if ask_confirmation "Do you want to create symlinks?"; then
     mkdir -p "$HOME/.claude"
     create_symlink "$SCRIPT_DIR/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
     create_symlink "$SCRIPT_DIR/.claude/settings.local.json" "$HOME/.claude/settings.local.json"
-    
+
+    mkdir -p "$HOME/.vscode"
+    create_symlink "$SCRIPT_DIR/vscode" "$HOME/.vscode"
+
     # Ghostty configuration
     mkdir -p "$HOME/.config/ghostty/themes"
     create_symlink "$SCRIPT_DIR/ghostty/config" "$HOME/.config/ghostty/config"

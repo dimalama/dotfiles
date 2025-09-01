@@ -45,6 +45,7 @@ Temporary Items
 .vscode/settings.json
 .vscode/launch.json
 .vscode/extensions.json
+vscode/extensions/
 .idea/
 *.swp
 *.swo
