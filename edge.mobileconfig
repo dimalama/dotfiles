@@ -39,6 +39,23 @@ https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-policies#developerto
             <key>DeveloperToolsAvailability</key>
             <integer>0</integer>
 
+            <!-- Extension Settings - Enable Chrome Web Store -->
+            <key>BlockExternalExtensions</key>
+            <false/>
+            <key>ControlDefaultStateOfAllowExtensionsFromOtherStoresSettingEnabled</key>
+            <true/>
+            <key>ExtensionInstallSources</key>
+            <array>
+                <string>https://chrome.google.com/webstore/*</string>
+                <string>https://microsoftedge.microsoft.com/addons/*</string>
+            </array>
+            <key>ExtensionAllowedTypes</key>
+            <array>
+                <string>extension</string>
+                <string>theme</string>
+                <string>user_script</string>
+            </array>
+
             <!-- Disable Microsoft Tracking and Bloat -->
             <key>ApplicationGuardFavoritesSyncEnabled</key>
             <false/>
@@ -257,8 +274,6 @@ https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-policies#developerto
 
             <!-- Disable Travel and Local Services -->
             <key>TravelAssistanceEnabled</key>
-            <false/>
-            <key>LocalProvidersEnabled</key>
             <false/>
 
             <!-- Disable Upload from Phone -->
