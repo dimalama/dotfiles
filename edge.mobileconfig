@@ -1,0 +1,331 @@
+<!-- README:
+https://www.spacebar.news/debloated-microsoft-edge-chromium-browser/
+https://gist.github.com/corbindavenport/1790f157ad8ccd80362676e553935c2f
+edge://policy/
+https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-policies#developertoolsavailability
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Microsoft Edge Debloat Configuration</string>
+            <key>PayloadIdentifier</key>
+            <string>com.microsoft.Edge</string>
+            <key>PayloadType</key>
+            <string>com.microsoft.Edge</string>
+            <key>PayloadUUID</key>
+            <string>12345678-1234-1234-1234-123456789ABC</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+
+            <!-- Search Engine Configuration - Google as Default -->
+            <key>DefaultSearchProviderEnabled</key>
+            <true/>
+            <key>DefaultSearchProviderName</key>
+            <string>Google</string>
+            <key>DefaultSearchProviderKeyword</key>
+            <string>google.com</string>
+            <key>DefaultSearchProviderSearchURL</key>
+            <string>https://www.google.com/search?q={searchTerms}</string>
+            <key>DefaultSearchProviderSuggestURL</key>
+            <string>https://www.google.com/complete/search?client=chrome&amp;q={searchTerms}</string>
+
+            <!-- Developer Tools - Keep Available -->
+            <key>DeveloperToolsAvailability</key>
+            <integer>0</integer>
+
+            <!-- Disable Microsoft Tracking and Bloat -->
+            <key>ApplicationGuardFavoritesSyncEnabled</key>
+            <false/>
+            <key>ApplicationGuardPassiveModeEnabled</key>
+            <false/>
+            <key>ApplicationGuardTrafficIdentificationEnabled</key>
+            <false/>
+            <key>ApplicationGuardUploadBlockingEnabled</key>
+            <false/>
+            <key>TyposquattingCheckerEnabled</key>
+            <false/>
+            <key>EdgeWorkspacesEnabled</key>
+            <false/>
+            <key>GamerModeEnabled</key>
+            <false/>
+
+            <!-- Disable Sign-in and Account Features -->
+            <key>ImplicitSignInEnabled</key>
+            <false/>
+            <key>LinkedAccountEnabled</key>
+            <false/>
+            <key>ProactiveAuthWorkflowEnabled</key>
+            <false/>
+            <key>SeamlessWebToBrowserSignInEnabled</key>
+            <false/>
+            <key>WebToBrowserSignInEnabled</key>
+            <false/>
+            <key>BrowserSignin</key>
+            <integer>0</integer>
+            <key>BrowserGuestModeEnabled</key>
+            <false/>
+            <key>NonRemovableProfileEnabled</key>
+            <false/>
+
+            <!-- Disable Microsoft Services Integration -->
+            <key>EdgeManagementEnabled</key>
+            <false/>
+            <key>EdgeManagementExtensionsFeedbackEnabled</key>
+            <false/>
+            <key>MAMEnabled</key>
+            <false/>
+
+            <!-- Password Manager - Disable (since you likely use a different one) -->
+            <key>PasswordManagerEnabled</key>
+            <false/>
+            <key>PasswordMonitorAllowed</key>
+            <false/>
+            <key>PasswordExportEnabled</key>
+            <false/>
+            <key>PasswordGeneratorEnabled</key>
+            <false/>
+            <key>PasswordRevealEnabled</key>
+            <false/>
+
+            <!-- Performance Features - Disable Unnecessary Ones -->
+            <key>ExtensionsPerformanceDetectorEnabled</key>
+            <false/>
+            <key>PerformanceDetectorEnabled</key>
+            <false/>
+            <key>PinBrowserEssentialsToolbarButton</key>
+            <false/>
+            <key>StartupBoostEnabled</key>
+            <false/>
+
+            <!-- Security - Keep Essential, Disable Tracking -->
+            <key>RelatedWebsiteSetsEnabled</key>
+            <false/>
+            <key>ScarewareBlockerProtectionEnabled</key>
+            <false/>
+            <key>SmartScreenEnabled</key>
+            <true/>
+            <key>SmartScreenPuaEnabled</key>
+            <false/>
+            <key>SmartScreenForTrustedDownloadsEnabled</key>
+            <false/>
+            <key>SmartScreenDnsRequestsEnabled</key>
+            <false/>
+
+            <!-- New Tab Page - Clean Setup -->
+            <key>NewTabPageAllowedBackgroundTypes</key>
+            <integer>3</integer>
+            <key>NewTabPageAppLauncherEnabled</key>
+            <false/>
+            <key>NewTabPageBingChatEnabled</key>
+            <false/>
+            <key>NewTabPageContentEnabled</key>
+            <false/>
+            <key>NewTabPageHideDefaultTopSites</key>
+            <true/>
+            <key>NewTabPagePrerenderEnabled</key>
+            <false/>
+            <key>NewTabPageQuickLinksEnabled</key>
+            <false/>
+            <key>NewTabPageLocation</key>
+            <string>about:blank</string>
+
+            <!-- Disable Microsoft Integrations -->
+            <key>AADWebSiteSSOUsingThisProfileEnabled</key>
+            <false/>
+            <key>AccessibilityImageLabelsEnabled</key>
+            <false/>
+            <key>AddressBarMicrosoftSearchInBingProviderEnabled</key>
+            <false/>
+            <key>AIGenThemesEnabled</key>
+            <false/>
+            <key>AmbientAuthenticationInPrivateModesEnabled</key>
+            <false/>
+
+            <!-- Ads and Promotional Content -->
+            <key>BingAdsSuppression</key>
+            <true/>
+            <key>PromotionalTabsEnabled</key>
+            <false/>
+            <key>ShowMicrosoftRewards</key>
+            <false/>
+            <key>ShowOfficeShortcutInFavoritesBar</key>
+            <false/>
+            <key>ShowRecommendationsEnabled</key>
+            <false/>
+
+            <!-- Disable Copilot and AI Features -->
+            <key>ComposeInlineEnabled</key>
+            <false/>
+            <key>EdgeDiscoverEnabled</key>
+            <false/>
+            <key>EdgeEnhanceImagesEnabled</key>
+            <false/>
+            <key>EdgeHistoryAISearchEnabled</key>
+            <false/>
+
+            <!-- Privacy Settings -->
+            <key>ConfigureDoNotTrack</key>
+            <true/>
+            <key>DiagnosticData</key>
+            <integer>0</integer>
+            <key>Edge3PSerpTelemetryEnabled</key>
+            <false/>
+            <key>EdgeAssetDeliveryServiceEnabled</key>
+            <false/>
+            <key>ExperimentationAndConfigurationServiceControl</key>
+            <integer>0</integer>
+            <key>PersonalizationReportingEnabled</key>
+            <false/>
+            <key>PersonalizeTopSitesInCustomizeSidebarEnabled</key>
+            <false/>
+            <key>UrlDiagnosticDataEnabled</key>
+            <false/>
+            <key>UserFeedbackAllowed</key>
+            <false/>
+
+            <!-- Disable Shopping and Financial Features -->
+            <key>EdgeShoppingAssistantEnabled</key>
+            <false/>
+            <key>EdgeWalletCheckoutEnabled</key>
+            <false/>
+            <key>EdgeWalletEtreeEnabled</key>
+            <false/>
+            <key>WalletDonationEnabled</key>
+            <false/>
+            <key>CryptoWalletEnabled</key>
+            <false/>
+            <key>PaymentMethodQueryEnabled</key>
+            <false/>
+
+            <!-- Disable Collections and Drop -->
+            <key>EdgeCollectionsEnabled</key>
+            <false/>
+            <key>EdgeEDropEnabled</key>
+            <false/>
+            <key>EdgeFollowEnabled</key>
+            <false/>
+
+            <!-- Disable Sidebar and Hub Features -->
+            <key>HubsSidebarEnabled</key>
+            <false/>
+            <key>StandaloneHubsSidebarEnabled</key>
+            <false/>
+
+            <!-- Disable Microsoft Office Integration -->
+            <key>MicrosoftOfficeMenuEnabled</key>
+            <false/>
+            <key>OutlookHubMenuEnabled</key>
+            <false/>
+
+            <!-- Disable Read Aloud and Translation -->
+            <key>ReadAloudEnabled</key>
+            <false/>
+            <key>TranslateEnabled</key>
+            <false/>
+            <key>LiveCaptionsAllowed</key>
+            <false/>
+            <key>LiveTranslationAllowed</key>
+            <false/>
+
+            <!-- Disable Math Solver -->
+            <key>MathSolverEnabled</key>
+            <false/>
+
+            <!-- Disable Spell Checking -->
+            <key>SpellcheckEnabled</key>
+            <false/>
+            <key>MicrosoftEditorProofingEnabled</key>
+            <false/>
+            <key>MicrosoftEditorSynonymsEnabled</key>
+            <false/>
+
+            <!-- Disable Visual Search and Picture in Picture -->
+            <key>VisualSearchEnabled</key>
+            <false/>
+            <key>PictureInPictureOverlayEnabled</key>
+            <false/>
+
+            <!-- Disable Text Prediction -->
+            <key>TextPredictionEnabled</key>
+            <false/>
+
+            <!-- Disable Travel and Local Services -->
+            <key>TravelAssistanceEnabled</key>
+            <false/>
+            <key>LocalProvidersEnabled</key>
+            <false/>
+
+            <!-- Disable Upload from Phone -->
+            <key>UploadFromPhoneEnabled</key>
+            <false/>
+
+            <!-- Disable Background Mode -->
+            <key>BackgroundModeEnabled</key>
+            <false/>
+
+            <!-- Disable Auto Updates Check -->
+            <key>EdgeAssetDeliveryServiceEnabled</key>
+            <false/>
+
+            <!-- Disable Sync -->
+            <key>SyncDisabled</key>
+            <true/>
+            <key>ForceSync</key>
+            <false/>
+
+            <!-- Disable Geolocation, Notifications, and Other Permissions by Default -->
+            <key>DefaultGeolocationSetting</key>
+            <integer>2</integer>
+            <key>DefaultNotificationsSetting</key>
+            <integer>2</integer>
+            <key>DefaultSensorsSetting</key>
+            <integer>2</integer>
+            <key>DefaultSerialGuardSetting</key>
+            <integer>2</integer>
+
+            <!-- Security Enhancements -->
+            <key>AutomaticHttpsDefault</key>
+            <integer>1</integer>
+            <key>HttpsUpgradesEnabled</key>
+            <true/>
+
+            <!-- Disable Reporting -->
+            <key>CloudReportingEnabled</key>
+            <false/>
+            <key>MetricsReportingEnabled</key>
+            <false/>
+
+            <!-- Home Page Configuration -->
+            <key>HomepageLocation</key>
+            <string>about:blank</string>
+            <key>RestoreOnStartup</key>
+            <integer>5</integer>
+            <key>ShowHomeButton</key>
+            <true/>
+
+            <!-- Disable Various Trackers -->
+            <key>TrackingPrevention</key>
+            <integer>2</integer>
+
+        </dict>
+    </array>
+    <key>PayloadDisplayName</key>
+    <string>Microsoft Edge Debloat Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.dimalama.edge.debloat</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>87654321-4321-4321-4321-210987654321</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>

@@ -157,3 +157,6 @@ alias ptest='pnpm run test'
 
 # Added by Windsurf
 export PATH="~/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"

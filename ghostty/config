@@ -140,3 +140,4 @@ image-storage-limit = 320000000
 link-url = true
 unfocused-split-opacity = 0.7
 unfocused-split-fill = #313244
+keybind = shift+enter=text:\x1b\r
