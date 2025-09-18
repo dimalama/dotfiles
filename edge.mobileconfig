@@ -72,19 +72,19 @@ https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-policies#developerto
             <key>GamerModeEnabled</key>
             <false/>
 
-            <!-- Disable Sign-in and Account Features -->
+            <!-- Disable Sign-in and Account Features (except work accounts) -->
             <key>ImplicitSignInEnabled</key>
             <false/>
             <key>LinkedAccountEnabled</key>
             <false/>
             <key>ProactiveAuthWorkflowEnabled</key>
-            <false/>
+            <true/>
             <key>SeamlessWebToBrowserSignInEnabled</key>
             <false/>
             <key>WebToBrowserSignInEnabled</key>
             <false/>
             <key>BrowserSignin</key>
-            <integer>0</integer>
+            <integer>1</integer>
             <key>BrowserGuestModeEnabled</key>
             <false/>
             <key>NonRemovableProfileEnabled</key>
@@ -152,9 +152,9 @@ https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-policies#developerto
             <key>NewTabPageLocation</key>
             <string>about:blank</string>
 
-            <!-- Disable Microsoft Integrations -->
+            <!-- Disable Microsoft Integrations (except Azure AD for work) -->
             <key>AADWebSiteSSOUsingThisProfileEnabled</key>
-            <false/>
+            <true/>
             <key>AccessibilityImageLabelsEnabled</key>
             <false/>
             <key>AddressBarMicrosoftSearchInBingProviderEnabled</key>
