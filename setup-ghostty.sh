@@ -4,7 +4,23 @@ set -e
 echo "🔧 Setting up Ghostty terminal..."
 
 # Create necessary directories if they don't exist
-mkdir -p "$HOME/.config/ghostty/themes"
+mkdir -p "$HOME/.config/ghostty"
+
+# Backup existing files if they exist
+if [ -f "$HOME/.config/ghostty/config" ] && [ ! -L "$HOME/.config/ghostty/config" ]; then
+    echo "Backing up existing Ghostty config..."
+    mv "$HOME/.config/ghostty/config" "$HOME/.config/ghostty/config.backup.$(date +%Y%m%d%H%M%S)"
+fi
+
+if [ -d "$HOME/.config/ghostty/themes" ] && [ ! -L "$HOME/.config/ghostty/themes" ]; then
+    echo "Backing up existing Ghostty themes directory..."
+    mv "$HOME/.config/ghostty/themes" "$HOME/.config/ghostty/themes.backup.$(date +%Y%m%d%H%M%S)"
+fi
+
+# Create symlinks to dotfiles
+echo "Creating symlinks for Ghostty configuration..."
+ln -sfn "$PWD/ghostty/config" "$HOME/.config/ghostty/config"
+ln -sfn "$PWD/ghostty/themes" "$HOME/.config/ghostty/themes"
 
 # Set Ghostty as default terminal handler
 echo "Setting Ghostty as default terminal..."

@@ -13,7 +13,7 @@ font-thicken = true
 # =============================================================================
 # THEME AND COLORS
 # =============================================================================
-theme = catppuccin-mocha
+theme = catppuccin-mocha.conf
 background = #1e1e2e
 foreground = #cdd6f4
 cursor-color = #f5e0dc
@@ -125,7 +125,6 @@ working-directory = home
 
 # Performance optimizations
 gtk-single-instance = false
-gtk-adwaita = false
 
 # Shell integration enhancements
 osc-color-report-format = 8-bit

@@ -29,7 +29,12 @@
       "WebFetch(domain:ghostty.org)",
       "WebFetch(domain:docs.codeium.com)",
       "WebFetch(domain:docs.windsurf.com)",
-      "Bash(claude /config)"
+      "Bash(claude /config)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl:*)",
+      "Bash(ghostty:*)",
+      "Bash(./setup-ghostty.sh:*)"
     ],
     "deny": []
   }
