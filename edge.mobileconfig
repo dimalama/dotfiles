@@ -161,8 +161,6 @@ https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-policies#developerto
             <false/>
             <key>AIGenThemesEnabled</key>
             <false/>
-            <key>AmbientAuthenticationInPrivateModesEnabled</key>
-            <false/>
 
             <!-- Ads and Promotional Content -->
             <key>BingAdsSuppression</key>
@@ -192,8 +190,6 @@ https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-policies#developerto
             <key>DiagnosticData</key>
             <integer>0</integer>
             <key>Edge3PSerpTelemetryEnabled</key>
-            <false/>
-            <key>EdgeAssetDeliveryServiceEnabled</key>
             <false/>
             <key>ExperimentationAndConfigurationServiceControl</key>
             <integer>0</integer>
@@ -288,6 +284,46 @@ https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-policies#developerto
             <key>EdgeAssetDeliveryServiceEnabled</key>
             <false/>
 
+            <!-- NEW 2024-2025 Policies for Enhanced Privacy -->
+            <!-- Disable Copilot Features -->
+            <key>EdgeCopilotEnabled</key>
+            <false/>
+            <key>CopilotPageContext</key>
+            <integer>0</integer>
+            <key>EdgeEntraCopilotPageContext</key>
+            <false/>
+
+            <!-- Disable Generative AI Features -->
+            <key>GenAILocalFoundationalModelSettings</key>
+            <dict>
+                <key>enabled</key>
+                <false/>
+            </dict>
+
+            <!-- Enhanced Security Mode -->
+            <key>EnhanceSecurityMode</key>
+            <integer>2</integer>
+
+            <!-- Process Isolation for Security -->
+            <key>OriginKeyedProcessesEnabled</key>
+            <true/>
+
+            <!-- Disable Microsoft Edge Bar -->
+            <key>EdgeBarEnabled</key>
+            <false/>
+
+            <!-- Disable Edge Workspaces Sync -->
+            <key>EdgeWorkspacesSyncEnabled</key>
+            <false/>
+
+            <!-- Disable Family Safety -->
+            <key>FamilySafetySettingsEnabled</key>
+            <false/>
+
+            <!-- Disable Edge Secure Network -->
+            <key>EdgeSecureNetworkEnabled</key>
+            <false/>
+
             <!-- Disable Sync -->
             <key>SyncDisabled</key>
             <true/>
@@ -324,9 +360,51 @@ https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-policies#developerto
             <key>ShowHomeButton</key>
             <true/>
 
-            <!-- Disable Various Trackers -->
+            <!-- Enhanced Tracking Prevention and Privacy -->
             <key>TrackingPrevention</key>
             <integer>2</integer>
+
+            <!-- Disable DNS-over-HTTPS if you want to use system DNS -->
+            <key>DnsOverHttpsMode</key>
+            <string>off</string>
+
+            <!-- Disable Search Suggestions in Address Bar -->
+            <key>SearchSuggestEnabled</key>
+            <false/>
+
+            <!-- Disable Network Prediction -->
+            <key>NetworkPredictionOptions</key>
+            <integer>2</integer>
+
+            <!-- Disable Safe Browsing for Enhanced Privacy -->
+            <key>SafeBrowsingProtectionLevel</key>
+            <integer>0</integer>
+
+            <!-- Disable AutoFill for Privacy -->
+            <key>AutofillAddressEnabled</key>
+            <false/>
+            <key>AutofillCreditCardEnabled</key>
+            <false/>
+
+            <!-- Disable Web Bluetooth -->
+            <key>DefaultWebBluetoothGuardSetting</key>
+            <integer>2</integer>
+
+            <!-- Disable Web USB -->
+            <key>DefaultWebUsbGuardSetting</key>
+            <integer>2</integer>
+
+            <!-- Force Clear Browsing Data on Exit -->
+            <key>ClearBrowsingDataOnExit</key>
+            <true/>
+
+            <!-- Disable Media Router -->
+            <key>EnableMediaRouter</key>
+            <false/>
+
+            <!-- Disable Ambient Authentication -->
+            <key>AmbientAuthenticationInPrivateModesEnabled</key>
+            <false/>
 
         </dict>
     </array>

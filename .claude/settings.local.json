@@ -34,7 +34,8 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(curl:*)",
       "Bash(ghostty:*)",
-      "Bash(./setup-ghostty.sh:*)"
+      "Bash(./setup-ghostty.sh:*)",
+      "WebSearch"
     ],
     "deny": []
   }
