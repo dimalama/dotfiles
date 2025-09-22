@@ -118,6 +118,14 @@ else
     echo "Skipping Ghostty setup."
 fi
 
+# macOS Services setup
+if ask_confirmation "Do you want to set up macOS services (e.g., syncthing)?"; then
+    echo "Setting up macOS services..."
+    "$SCRIPT_DIR/setup-macos-services.sh" syncthing
+else
+    echo "Skipping macOS services setup."
+fi
+
 # Anki setup
 if ask_confirmation "Do you want to set up Anki configuration?"; then
     echo "Setting up Anki..."
