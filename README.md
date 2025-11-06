@@ -34,6 +34,8 @@ cd ~/dotfiles
 ```bash
 ./postgres.sh         # Set up PostgreSQL
 ./setup-claude-code.sh # Install Claude Code CLI
+./setup-macos.sh      # Configure macOS system preferences
+./doctor.sh           # Health check - verify environment is correct
 ./fix-git-branch-display.sh    # Fix terminal display issues
 ./fix-terminal-icons.sh        # Fix terminal icons
 ```

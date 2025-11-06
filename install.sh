@@ -142,4 +142,12 @@ else
     echo "Skipping Git environment setup."
 fi
 
+# macOS system preferences
+if ask_confirmation "Do you want to configure macOS system preferences?"; then
+    echo "Configuring macOS system preferences..."
+    "$SCRIPT_DIR/setup-macos.sh"
+else
+    echo "Skipping macOS system preferences setup."
+fi
+
 echo '====== Installation complete ======'
