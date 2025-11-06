@@ -38,6 +38,12 @@ This is a dot files project. The purpose of this project to maintain configurati
 # Configure Git environment (personal vs work)
 ./setup-git-environment.sh
 
+# Configure macOS system preferences (Dock, Finder, keyboard, etc.)
+./setup-macos.sh
+
+# Health check - verify environment is correctly configured
+./doctor.sh
+
 # Fix terminal display issues
 ./fix-git-branch-display.sh
 ./fix-terminal-icons.sh
@@ -76,6 +82,8 @@ dotfiles/
 ├── setup-python.sh         # Python environment setup
 ├── setup-anki.sh           # Anki spaced repetition setup
 ├── setup-git-environment.sh # Git environment configuration
+├── setup-macos.sh          # macOS system preferences automation
+├── doctor.sh               # Environment health check script
 ├── .zshrc                  # Shell configuration
 ├── .gitconfig              # Git aliases and settings
 ├── .vimrc                  # Vim configuration
@@ -160,6 +168,129 @@ cp .gitconfig.work.template ~/.gitconfig.work          # Work laptop
 - **Environment Configs**: Included conditionally via `[include]` sections
 - **Template System**: Version-controlled templates with user-specific instances excluded
 - **Symlink Strategy**: Templates are symlinked to home directory for easy updates
+
+## macOS System Preferences Automation
+
+The `setup-macos.sh` script automates configuration of macOS system settings that would normally require manual clicking through System Preferences. This saves significant time on fresh installs.
+
+### What It Configures
+
+**General UI/UX**
+- Expands save/print panels by default
+- Saves to disk instead of iCloud by default
+- Disables "Are you sure you want to open?" dialogs
+- Disables smart quotes and dashes (better for coding)
+
+**Keyboard & Input**
+- Sets fast keyboard repeat rate (2ms repeat, 15ms initial delay)
+- Disables press-and-hold for accent characters
+- Enables full keyboard access for all controls
+- Disables auto-correct, auto-capitalization
+
+**Trackpad & Mouse**
+- Enables tap to click
+- Enables three-finger drag
+- Increases tracking speed
+
+**Energy & Screen**
+- Configures display sleep times (battery vs AC)
+- Requires password immediately after sleep
+- Saves screenshots to Desktop in PNG format
+- Disables screenshot shadows
+
+**Finder**
+- Shows all filename extensions
+- Shows status bar and path bar
+- Keeps folders on top when sorting
+- Avoids creating .DS_Store on network/USB volumes
+- Uses list view by default
+- Shows ~/Library and /Volumes folders
+
+**Dock & Hot Corners**
+- Sets icon size to 48px
+- Enables auto-hide with no delay
+- Removes animation when hiding/showing
+- Configures hot corners (Mission Control, Desktop, Screen Saver)
+
+**Safari, Mail, Terminal**
+- Enables developer tools in Safari
+- Improves privacy settings
+- Optimizes Mail.app keyboard shortcuts
+- Enables UTF-8 in Terminal
+
+**Security**
+- Enables Firewall and Stealth Mode
+- Prompts for FileVault if not enabled
+
+### Usage
+
+```bash
+./setup-macos.sh
+```
+
+Note: Some changes require logout/restart to take effect. The script will restart affected applications automatically.
+
+## Environment Health Check
+
+The `doctor.sh` script verifies your dotfiles environment is correctly configured and helps debug setup issues.
+
+### What It Checks
+
+**System Information**
+- macOS version and architecture
+- Homebrew installation and health
+
+**Core Tools**
+- Required CLI tools (git, vim, zsh, gh, curl, wget, jq)
+- Modern CLI alternatives (bat, fd, ripgrep, eza, zoxide, fzf, htop, delta)
+
+**Shell Configuration**
+- Current shell (should be zsh)
+- zplug plugin manager
+- powerlevel10k theme
+- Dotfile symlinks (.zshrc, .p10k.zsh, etc.)
+
+**Configuration Symlinks**
+- All dotfile symlinks point to correct locations
+- Config directories (gh, gh-dash, windsurf, claude)
+- VS Code and other app configurations
+
+**Git Configuration**
+- User name and email configured
+- Environment-specific configs (personal/work)
+- SSH keys present
+- Git LFS installed
+
+**Development Environments**
+- Python (python3, pyenv, uv, default venv)
+- Node.js (node, nvm, pnpm)
+- Docker, Terraform
+
+**Applications**
+- VS Code, Ghostty, iTerm, Brave, 1Password, Rectangle, Alfred, etc.
+- Claude Code CLI authentication
+- 1Password CLI and SSH agent
+
+**Services**
+- Background services (Syncthing, etc.)
+
+### Usage
+
+```bash
+./doctor.sh
+```
+
+**Output Format:**
+- ✓ Green checkmarks for passed checks
+- ⚠ Yellow warnings for optional improvements
+- ✗ Red X marks for failed checks requiring attention
+- Exit code 0 if no failures, 1 if critical issues found
+
+**When to Run:**
+- After initial setup to verify everything works
+- Before important work to ensure environment is healthy
+- After updates to detect configuration drift
+- When debugging environment issues
 
 ## Manual Installations
 Some tools require manual installation and cannot be automated. See [manual-installs.md](manual-installs.md) for:
