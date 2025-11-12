@@ -13,10 +13,11 @@ font-thicken = true
 # =============================================================================
 # THEME AND COLORS
 # =============================================================================
-theme = catppuccin-mocha.conf
-background = #1e1e2e
-foreground = #cdd6f4
-cursor-color = #f5e0dc
+# Auto-switch between light and dark themes based on system appearance
+# Use single theme for consistent dark mode: theme = catppuccin-mocha
+theme = dark:catppuccin-mocha,light:catppuccin-latte
+
+# Cursor configuration
 cursor-style = block
 
 # =============================================================================

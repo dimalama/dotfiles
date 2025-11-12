@@ -54,6 +54,7 @@ p10k configure
 - **Symlink Strategy**: Configuration files are symlinked from this repo to their target locations
 
 ### Key Configurations
+- **Terminal**: Ghostty with Catppuccin themes, automatic light/dark mode switching, GPU acceleration, and optimized for macOS
 - **Shell**: zsh with powerlevel10k theme, zplug plugin manager, and modern CLI tool aliases
 - **Editor**: Vim configuration with extensive customization
 - **Git**: Custom aliases for common workflows, modern settings (zdiff3, autosquash, autoStash), environment-specific configurations
@@ -80,11 +81,26 @@ dotfiles/
 ├── .gitconfig              # Git aliases and settings
 ├── .vimrc                  # Vim configuration
 ├── vscode/settings.json    # VS Code settings
+├── ghostty/                # Ghostty terminal config and themes
+│   ├── config              # Main Ghostty configuration
+│   └── themes/             # Catppuccin and custom themes
 ├── gh/config.yml           # GitHub CLI configuration
 ├── gh-dash/config.yml      # GitHub dashboard configuration
 ├── anki/                   # Anki configuration and decks
 └── windsurf/global_rules.md # Windsurf coding guidelines
 ```
+
+### Ghostty Terminal Configuration
+- **Themes**: Catppuccin color schemes (Mocha, Latte, Frappe, Macchiato) + Developer Dark
+- **Auto Theme Switching**: Automatically switches between dark (Mocha) and light (Latte) themes based on system appearance
+- **Theme Format**: Reference themes without `.conf` extension in config (e.g., `theme = catppuccin-mocha`)
+- **Theme Location**: Themes stored in `ghostty/themes/` and symlinked to `~/.config/ghostty/themes/`
+- **Configuration**: Main config at `ghostty/config` symlinked to `~/.config/ghostty/config`
+- **Font**: MesloLGS Nerd Font with ligatures and character variants enabled
+- **Performance**: GPU acceleration, 100k scrollback, optimized rendering
+- **macOS Integration**: Native titlebar, option-as-alt, proper fullscreen support
+- **Keybindings**: Extensive shortcuts for window/tab/pane management, vim-friendly
+- **Quick Reload**: Use `cmd+shift+,` to reload config while Ghostty is running
 
 ### Python Environment
 - Uses uv package manager instead of pip
@@ -107,6 +123,7 @@ dotfiles/
 ## Symlink Targets
 The install.sh script creates symlinks from this repo to:
 - ~/.bash_profile, ~/.vimrc, ~/.vim, ~/.gitconfig, ~/.zshrc, ~/.npmrc, ~/.p10k.zsh, ~/.stCommitMsg
+- ~/.config/ghostty/config, ~/.config/ghostty/themes
 - ~/.config/gh/config.yml, ~/.config/gh-dash/config.yml
 - ~/.codeium/windsurf/memories/global_rules.md
 - ~/.claude/CLAUDE.md
