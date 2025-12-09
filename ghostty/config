@@ -28,7 +28,7 @@ shell-integration = detect
 # BEHAVIOR AND PERFORMANCE
 # =============================================================================
 copy-on-select = true
-scrollback-limit = 100000
+scrollback-limit = 1073741824
 resize-overlay = never
 resize-overlay-position = center
 confirm-close-surface = false
